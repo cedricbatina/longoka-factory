@@ -128,6 +128,7 @@ public class FactoryLessonRepository {
   }
 
   public List<Rule> listRules(long lessonRefId) throws SQLException {
+    // Note: importance_id added to match Rule constructor requirements (both ID and code needed)
     String sql = "SELECT r.rule_id, rt.code AS rule_type_code, lr.importance_id, il.code AS importance_code, r.title, r.statement_md, "
       + "r.pattern_json, r.notes_md "
       + "FROM lesson_rules lr "
@@ -147,6 +148,8 @@ public class FactoryLessonRepository {
           pattern = null;
         }
       }
+      // Use getObject() to properly handle nullable integers (LEFT JOIN may produce nulls)
+      Integer importanceId = (Integer) rs.getObject("importance_id");
       return new Rule(
         rs.getLong("rule_id"),
         rs.getString("rule_type_code"),
@@ -154,7 +157,7 @@ public class FactoryLessonRepository {
         rs.getString("statement_md"),
         pattern,
         rs.getString("notes_md"),
-        (Integer) rs.getObject("importance_id"),
+        importanceId,
         rs.getString("importance_code")
       );
     }, lessonRefId);
@@ -231,20 +234,24 @@ public class FactoryLessonRepository {
       + "s.language_code, asrc.ref, asrc.quote_md, asrc.comment_md "
       + "FROM atom_sources asrc JOIN sources s ON s.source_id=asrc.source_id "
       + "WHERE asrc.atom_id=? ORDER BY s.source_id";
-    return queryList(sql, rs -> new AtomSourceRef(
-      rs.getLong("source_id"),
-      rs.getString("source_code"),
-      rs.getString("title"),
-      rs.getString("authors"),
-      (Integer) rs.getObject("year"),
-      rs.getString("publisher"),
-      rs.getString("isbn"),
-      rs.getString("url"),
-      rs.getString("language_code"),
-      rs.getString("ref"),
-      rs.getString("quote_md"),
-      rs.getString("comment_md")
-    ), atomId);
+    return queryList(sql, rs -> {
+      // Use getObject() for nullable year field (Integer can be null in database)
+      Integer year = (Integer) rs.getObject("year");
+      return new AtomSourceRef(
+        rs.getLong("source_id"),
+        rs.getString("source_code"),
+        rs.getString("title"),
+        rs.getString("authors"),
+        year,
+        rs.getString("publisher"),
+        rs.getString("isbn"),
+        rs.getString("url"),
+        rs.getString("language_code"),
+        rs.getString("ref"),
+        rs.getString("quote_md"),
+        rs.getString("comment_md")
+      );
+    }, atomId);
   }
 
   public List<AtomRelation> listRelationsForAtomSet(List<Long> atomIds) throws SQLException {
@@ -399,12 +406,14 @@ public class FactoryLessonRepository {
       try (ResultSet rs = ps.executeQuery()) {
         while (rs.next()) {
           long atomId = rs.getLong("atom_id");
+          // Use getObject() for nullable year field (Integer can be null in database)
+          Integer year = (Integer) rs.getObject("year");
           result.computeIfAbsent(atomId, k -> new ArrayList<>()).add(new AtomSourceRef(
             rs.getLong("source_id"),
             rs.getString("source_code"),
             rs.getString("title"),
             rs.getString("authors"),
-            (Integer) rs.getObject("year"),
+            year,
             rs.getString("publisher"),
             rs.getString("isbn"),
             rs.getString("url"),
