@@ -53,7 +53,8 @@ Le script extrait le dernier mot de chaque `kg_text` et le lie comme form:
 
 ### Étape 1: Backup de la base (IMPORTANT!)
 ```bash
-mysqldump -h 6i695q.myd.infomaniak.com -u 6i695q_cedric -p6i695q_factory_db > backup_lesson13_$(date +%Y%m%d).sql
+mysqldump -h 6i695q.myd.infomaniak.com -u 6i695q_cedric -p 6i695q_factory_db > backup_lesson13_$(date +%Y%m%d).sql
+# Note: You will be prompted for the password securely
 ```
 
 ### Étape 2: Exécuter le script SQL

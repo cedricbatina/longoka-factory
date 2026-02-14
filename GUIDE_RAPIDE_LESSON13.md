@@ -16,7 +16,8 @@ Corriger les problèmes de rôles "form" dans la leçon 13 (conjugaison du verbe
 **Via ligne de commande**:
 ```bash
 cd backend-java_factory-lessons_fixed/backend-java/SQL\ Files
-mysql -h 6i695q.myd.infomaniak.com -u 6i695q_cedric -p6i695q_factory_db < factory_lesson13_fix_forms.sql
+mysql -h 6i695q.myd.infomaniak.com -u 6i695q_cedric -p -D 6i695q_factory_db < factory_lesson13_fix_forms.sql
+# Note: You will be prompted for the password securely
 ```
 
 ### 2. Vérifier les résultats

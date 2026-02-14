@@ -205,7 +205,7 @@ SELECT
     ELSE '❌ Fix problems before export'
   END AS export_status,
   'la-conjugaison-du-verbe-etre-en-kikongo' AS slug,
-  'D:\\works\\lectures\\corrected kikongo course\\La conjugaison\\lesson-13-la-conjugaison-du-verbe-etre' AS output_directory;
+  'D:/works/lectures/corrected kikongo course/La conjugaison/lesson-13-la-conjugaison-du-verbe-etre' AS output_directory;
 
 -- ============================================================================
 -- END OF VERIFICATION SCRIPT
