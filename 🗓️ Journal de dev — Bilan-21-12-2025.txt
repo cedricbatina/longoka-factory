@@ -1,0 +1,1062 @@
+🗓️ Journal de dev — Bilan (aujourd’hui)
+1) DB Longoka — 6i695q_longoka_new_db (contenu cours/leçons)
+
+Objectif : assainir les slugs des leçons (unicité / cohérence), car certains enregistrements dataient d’avant la logique auto.
+
+✅ Fait
+
+Détection des collisions via GROUP BY slug HAVING COUNT(*) > 1.
+
+Correction des cas concrets :
+
+Le chiffre 2 en kikongo pointait sur le-chiffre-1-en-kikongo → corrigé vers le-chiffre-2-en-kikongo
+
+mu-mi, di-ma, fi, etc. pointaient sur de mauvais slugs → recollés sur les bons slugs existants.
+
+Résultat : la requête “doublons de slug” renvoie 0 ligne.
+
+Renforcement : tentative d’ajout d’un UNIQUE sur lessons.lesson_slug_id ✅ (donc 1 slug_id ↔ 1 lesson, plus d’ambiguïté possible côté factory).
+
+📌 Décision importante
+
+Le slug est unique et conforme au titre : on ne “recrée” pas des slugs si déjà existants, on rattache la leçon au bon lesson_slug_id.
+
+2) DB Factory — 6i695q_factory_db (graph d’atomes + leçons structurées)
+
+Vision : le contenu “cours” devient un graphe d’objets pédagogiques (chips, rules, examples, atoms…) référencé par (platform_id, course_id, lesson_id) via lesson_refs.
+
+2.1 Référence de leçon (pointeur vers Longoka)
+
+✅ lesson_refs créé/inséré :
+
+platform_id = 1
+
+course_id = 3
+
+lesson_id = 9
+
+lesson_ref_id = 1
+
+slug : lalphabet-du-kikongo-et-la-structure-des-mots-et-des-sons
+
+➡️ Ça permet d’avoir plusieurs plateformes + plusieurs cours + plusieurs leçons sans mélanger.
+
+3) Leçon 9 — ce qui est déjà stocké (factory)
+3.1 Chips (blocs pédagogiques)
+
+✅ chip_types OK (objectif, regle, note, a_retenir)
+✅ chips insérés pour lesson_ref_id=1
+
+Tu as maintenant 8 chips visibles :
+
+Objectif
+
+Voyelles : groupes
+
+Épellation (ta / ata)
+
+Prononciation (rappels)
+
+Inventaire (cours)
+
+Tons : diacritiques
+
+Alternative sans diacritiques (validée)
+
+Norme Factory
+
+Point clé : on ne stocke pas du lexique “dictionnaire” ici. Les chips sont des règles/repères de cours.
+
+3.2 Rules (règles)
+
+✅ rule_types OK
+✅ rules OK + liaison lesson_rules
+
+Tu as 4 rules liées à la leçon 9 :
+
+L9 — Épellation ta/ata
+
+L9 — Tons : diacritiques
+
+L9 — Double voyelle (sans diacritiques)
+
+Factory — pas de i→y / u→w
+
+📌 Décision : pas d’exceptions sur i→y / u→w. On veut une écriture phonétique et stable.
+
+3.3 Examples (exemples)
+
+✅ examples : 7 exemples insérés (ton bas/haut/modulé, double voyelle, mua, etc.)
+
+📌 Clarif importante (ta demande) :
+
+On peut stocker des traductions en exemples (fr/en/…) uniquement comme support pédagogique.
+
+Mais on ne stocke pas la masse “lexique” (kg-fr-en) : ça reste dans Lexikongo/Lexilingala.
+
+4) Alphabet (leçon 9) — graphemes + atoms
+4.1 Orthographe
+
+✅ orthographies :
+
+orthography_id = 1
+
+name = Kikongo classique
+
+is_default = 1
+
+4.2 Graphemes
+
+✅ grapheme_kinds : vowel / semi_vowel / consonant
+✅ graphemes : 20 graphemes (inventaire de la leçon 9)
+
+4.3 Atoms “grapheme”
+
+✅ atoms : 20 atoms grapheme (liés à l’orthographe default)
+✅ atom_grapheme_seq : mapping atom→grapheme (seq=1)
+✅ lesson_atoms : 20 atoms liés à la leçon 9 (role = core)
+
+5) Syllabes-racines (extension progressive)
+5.1 Atoms “syllable”
+
+✅ atom_types : syllable
+✅ atom_subtypes : cv et ccv
+✅ Seed syllabes : 26 au total (14 CV + 12 CCV)
+
+5.2 Grapheme decomposition auto
+
+✅ mapping via atom_grapheme_seq :
+
+CV → seq 1..2
+
+CCV → seq 1..3
+
+📌 Tes chiffres confirment que tout est cohérent :
+
+20 graphemes atoms × 1 = 20
+
+14 CV × 2 = 28
+
+12 CCV × 3 = 36
+Total atom_grapheme_seq = 84 ✅ (c’est exactement ce que tu as)
+
+5.3 Liaison à la leçon 9
+
+✅ lesson_atoms : 26 syllables liées à leçon 9 (role = bonus)
+
+📌 Et tu as raison : cette liste (pa, mpa, pi, mpi, …) doit être augmentée au fil de l’eau, pas “tout d’un coup”.
+
+6) Sources / théories / tags (pour Sungu Banzuzi + Nsaudi)
+
+✅ source_kinds : book
+✅ sources : sungu_banzuzi_roots inséré (avec authors au bon champ)
+✅ atom_sources : 26 liens (1 par syllabe) ✅
+✅ atom_glosses : table prête pour fr/en/pt/et… (multi-langue clean, sans colonnes à l’infini)
+✅ tags + atom_tags : OK
+
+tu as déjà la logique “scope=atom”
+
+et tu as vérifié que la théorie tague bien 26 syllabes + 20 graphemes
+
+📌 Très bon choix :
+
+gloss multi-langue → atom_glosses
+
+bibliographie / provenance → sources + atom_sources
+
+classification → tags + atom_tags
+
+7) Relations (composition / dérivation / racines)
+
+✅ relation_types : déjà riche (11 types), dont :
+
+composed_of, derived_from, has_etym_root, variant_of, etc.
+✅ atom_relations prêt
+
+📌 Point de linguistique/orthographe (ta correction) à intégrer dans nos “règles de découpe” :
+
+Pour un cas comme mpimpa :
+
+on écrit mpimpa
+
+on peut prononcer [mpiimpa] (allongement tonique)
+➡️ Donc : l’allongement ii est une règle prosodique + exemple, pas une “syllabe de base” qui casserait la logique.
+Et tu as validé : kôka ↔ kooka (double voyelle = alternative ASCII).
+
+✅ Où on en est (résumé ultra-court)
+
+Longoka DB : slugs leçons propres, contrainte d’unicité ajoutée → base saine.
+
+Factory DB : schéma complet + Leçon 9 entièrement seedée :
+
+lesson_refs ✅
+
+chips ✅
+
+rules + lesson_rules ✅
+
+examples ✅
+
+orthography + graphemes ✅
+
+atoms graphemes ✅
+
+atoms syllables (26) + décomposition graphemique ✅
+
+sources/tags/theories + liens ✅
+
+relation_types prêts ✅
+
+Nickel ✅ Tes contrôles confirment que la leçon 9 est propre et cohérente :
+
+Chips L9 : 14
+
+Règles liées à L9 : 9
+
+Atoms liés à L9 : 20 graphèmes (core) + 26 syllabes (bonus)
+
+Décomposition syllabes → graphèmes : OK (0 anomalies)
+
+Bilan complet (pour ton journal de dev) — Factory DB
+0) Contexte / séparation des DB
+
+6i695q_longoka_new_db = base “plateforme Longoka” (cours, lessons, slugs…).
+
+Tu as corrigé les doublons de lesson_slug_id.
+
+Tu as posé une contrainte : UNIQUE(lesson_slug_id) sur lessons → intégrité OK.
+
+6i695q_factory_db = base “usine” (contenus structurés + graphe d’atomes), indépendante des plateformes.
+
+On n’y stocke pas le lexique complet (déjà dans Lexikongo/Lexilingala).
+
+On y stocke les règles, chips, exemples, et un graphe (atomes + relations + sources) réutilisable pour générer livres/apps/jeux/exos.
+
+1) Objectif atteint : “Leçon → Graphe d’atomes”
+
+La factory est maintenant capable de représenter une leçon comme :
+
+une référence (lesson_refs)
+
+des contenus pédagogiques (chips / règles / exemples)
+
+des unités manipulables (atoms + graphèmes + relations)
+
+des sources / théories (pour les racines et les interprétations)
+
+2) Ce qui est en place dans 6i695q_factory_db (architecture)
+A) Référencement des leçons (multi-plateforme)
+
+platforms : plateformes (Longoka, etc.)
+
+lesson_refs : pivot (platform_id, course_id, lesson_id, slug, title, etc.)
+
+modules, course_syllabus : pour structurer un parcours (optionnel / future UI)
+
+✅ Important : course_id/lesson_id ici sont les IDs “plateforme” (Longoka), pas les IDs internes factory.
+
+B) Contenu pédagogique structuré
+
+chip_types (objectif, regle, note, a_retenir, …)
+
+chips (lesson_ref_id → texte markdown)
+
+rule_types (orthography / prosody / pedagogy / …)
+
+rules
+
+lesson_rules (link + importance)
+
+examples (kg_text + fr_text + en_text + notes_md)
+
+✅ Décision : les traductions sont OK comme exemples (illustrations pédagogiques),
+mais pas de “copie” du lexique (ça reste dans Lexikongo).
+
+C) “Graphe linguistique” (atoms)
+
+atom_types : (morpheme, stem, syllable, grapheme, phoneme, particle, clitic, word, number, other)
+
+atom_subtypes : ex. syllable(cv/ccv), grapheme(vowel/semi_vowel/consonant), etc.
+
+atoms : forme normalisée + notes + gloss éventuels (mais gloss détaillés plutôt via atom_glosses)
+
+atom_relations + relation_types : derived_from, composed_of, has_etym_root, variant_of…
+
+lesson_atoms + lesson_atom_roles : core/bonus + evidence_md
+
+✅ Tu as bien derived_from / composed_of / has_etym_root → parfait pour relier mots ↔ racines.
+
+D) Orthographe / alphabet (L9)
+
+orthographies : (language_code, name, is_default)
+
+grapheme_kinds : vowel / semi_vowel / consonant
+
+graphemes : inventaire de lettres
+
+atom_grapheme_seq : décomposition d’un atom en graphèmes ordonnés (clé pour syllabes, mots, etc.)
+
+✅ L9 a installé :
+
+Orthographe default : Kikongo classique (orthography_id=1, is_default=1)
+
+20 graphèmes en DB
+
+20 atoms “grapheme” liés à L9 (core)
+
+26 atoms “syllable” liés à L9 (bonus)
+
+atom_grapheme_seq : mapping complet, cohérent (0 anomalies)
+
+E) Sources / tags / théories (racines & “modèles”)
+
+Tu as déjà ce qu’il faut (et c’est très bien d’avoir tout de suite) :
+
+source_kinds (ex: book)
+
+sources (authors, year, publisher…)
+
+atom_sources (atom_id ↔ source_id + ref/quote/comment)
+
+tags (scope='atom', code='…')
+
+atom_tags (atom ↔ tag)
+
+theories (théories rattachables à une source)
+
+✅ Constat mesuré (d’après tes requêtes) :
+
+Les 26 syllabes sont reliées à la source sungu_banzuzi_roots via atom_sources.
+
+Les tags “théorie Sungu Banzuzi” + “théorie Nsaudi lettres” couvrent :
+
+26 syllabes
+
+20 graphèmes
+
+Donc tu as déjà la structure pour plusieurs lectures du même objet (scientifique/étymologique vs phonologique vs pédagogique) sans casser le modèle.
+
+3) Décisions “normes” confirmées (à noter au journal)
+
+Pas de i→y / u→w comme règle automatique (tu veux “on entend comme on écrit”, simple & strict).
+
+Allongement vocalique : stocké comme règle de prosodie + exemples (ex: kôka ↔ kooka validé).
+
+Syllabes : stockées comme unités “factory” (bonus), extensibles au fur et à mesure (pa/mpa/ndi… etc.)
+
+Lexique : ne pas recopier Lexikongo dans la factory ; la factory pointe / réutilise via règles + exemples + graphe.
+
+4) État actuel L9 (résumé “livrable”)
+
+L9 est maintenant un “package” complet utilisable par un futur dashboard :
+
+lesson_refs : L9 existe (lesson_ref_id=1 pour course_id=3 lesson_id=9)
+
+chips : 14
+
+rules liées : 9
+
+examples : présents (dont tons + double voyelle + mua)
+
+orthographies/graphemes : ok
+
+atoms : alphabet + syllabes
+
+atom_grapheme_seq : ok
+
+sources/tags/theories : déjà en place
+
+5) Points à durcir avant le dashboard (important)
+
+Je te conseille d’ajouter/valider ces garde-fous (sinon tu vas souffrir plus tard) :
+
+A) Unicité logique des atoms
+
+Assure-toi qu’on a (ou qu’on ajoute) une contrainte logique :
+
+unique (language_code, atom_type_id, normalized_form)
+Sinon tu risques des doublons silencieux.
+
+B) Vues SQL pour le dashboard “Lessons”
+
+Créer 2–3 vues te simplifiera l’UI :
+
+Vue “lesson overview” : nb_chips, nb_rules, nb_examples, nb_atoms
+
+Vue “lesson atoms list” : atoms + type/subtype + role(core/bonus)
+
+Vue “atom relations” : pour naviguer dans le graphe
+
+Si tu veux, je te donne les CREATE VIEW prêts à copier.
+
+6) Prochaine étape logique (avant L10)
+
+Stabiliser le dashboard (lecture) :
+
+lister lessons_refs
+
+drill-down sur L9 : chips / rules / examples / atoms
+
+Ensuite seulement : L10 (et on suit la même méthode : “leçon → chips/rules/examples → atoms/règles → liens”).
+
+Si tu veux qu’on verrouille le bilan avec un “snapshot chiffré global”, exécute juste ces 6 requêtes et colle les résultats (ça fait un super bloc “Journal de dev”) :
+
+SELECT COUNT(*) nb_lessons FROM lesson_refs;
+SELECT COUNT(*) nb_chips FROM chips;
+SELECT COUNT(*) nb_rules FROM rules;
+SELECT COUNT(*) nb_examples FROM examples;
+SELECT COUNT(*) nb_atoms FROM atoms;
+SELECT COUNT(*) nb_relations FROM atom_relations;
+
+
+Et après ça, on passe à : vues SQL + structure du dashboard Lessons, puis L10.
+
+
+Snapshot (factory_db)
+
+lesson_refs : 1 (L9)
+
+chips : 14
+
+rules : 9
+
+examples : 10
+
+atoms : 54
+
+atom_relations : 5
+
+👉 Donc aujourd’hui on a bien une leçon “complète” (référence + contenu pédagogique + règles + mini-exemples + base linguistique atomisée + début de graphe).
+
+Bilan complet (à coller dans ton Journal de dev)
+1) Objectif atteint : Factory DB = graphe d’atomes référencé par lesson_id
+
+On a mis en place une base “factory” indépendante de Lexikongo (pas de duplication du lexique), conçue pour :
+
+stocker le contenu pédagogique des leçons (chips, règles, exemples),
+
+stocker des atomes linguistiques (graphèmes, syllabes-racines, etc.),
+
+relier tout ça via des liaisons (lesson_atoms, atom_relations, atom_grapheme_seq, tags, sources…).
+
+2) Leçon 9 (Kikongo) intégrée et stable
+
+lesson_ref_id = 1 pour (course_id=3, lesson_id=9).
+
+Contenu L9 stocké :
+
+14 chips : objectif + règles (voyelles, épellation ta/ata, tons, norme Factory…) + notes + “à retenir”.
+
+9 rules : règles “pédagogie / prosodie / orthographe” dont :
+
+épellation ta/ata
+
+tons avec diacritiques
+
+alternative sans diacritiques (double voyelle validée : ex. kôka → kooka)
+
+norme “pas de i→y / u→w” (orthographe : on écrit ce qu’on entend)
+
+10 examples : utilisés comme exemples pédagogiques (pas comme dictionnaire).
+
+3) Alphabet et base phonographique (graphèmes)
+
+On a défini l’orthographe Kikongo classique (default).
+
+20 graphèmes insérés (voyelles + semi-voyelles + consonnes).
+
+Ces graphèmes ont été aussi créés en atoms de type grapheme et liés à la leçon 9 en core.
+
+4) Syllabes-racines (étymologie / usine à concepts)
+
+On a créé un atom_type syllable (subtypes cv / ccv) et seedé une première série (extension progressive).
+
+Total actuel : 26 syllabes-racines (14 CV + 12 CCV).
+
+Décomposition 100% clean : toutes les syllabes ont leur mapping graphémique complet dans atom_grapheme_seq
+
+CV → 2 graphèmes
+
+CCV → 3 graphèmes
+
+Elles sont liées à L9 en bonus (car “factory knowledge”, pas forcément tout dans le cours).
+
+5) Tags + sources déjà en place (bonne décision)
+
+On a déjà :
+
+sources, source_kinds, atom_sources
+
+tags, atom_tags
+
+atom_glosses
+
+Et on a déjà créé la source :
+
+Sungu Banzuzi – Racines étymologiques du groupe linguistique koongo (sources.code = sungu_banzuzi_roots)
+et on a relié les syllabes à cette source via atom_sources.
+
+👉 Donc on est prêt pour :
+
+ajouter au fur et à mesure les définitions/concepts (glosses FR/EN/…),
+
+attribuer la provenance (Sungu, Nsaudi, etc.),
+
+différencier les théories (tags “theory_*”) sans casser le schéma.
+
+6) Graphe en démarrage
+
+5 relations actuellement dans atom_relations
+
+Les relation_types sont déjà riches : derived_from / composed_of / has_etym_root / variant_of etc.
+👉 On pourra relier plus tard :
+
+des words / stems / morphemes aux syllabes-racines,
+
+des expressions à des composants,
+
+et faire une vraie navigation “graph”.
+
+Ce qu’il reste à verrouiller (petite checklist technique)
+
+Unique key atoms : (language_code, atom_type_id, normalized_form) (si pas déjà fait).
+
+Ajouter les vues SQL du dashboard (overview + lesson_atoms + relations + decompositions) → pratique pour piloter.
+
+////
+
+Afficher la zone SQL
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0010 seconde(s).)
+USE `6i695q_factory_db`
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0010 seconde(s).)
+SET NAMES utf8mb4
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0877 seconde(s).)
+-- ========================= -- 1) Vue : overview par leçon -- ========================= CREATE OR REPLACE VIEW v_lessons_overview AS SELECT lr.lesson_ref_id, lr.platform_id, lr.course_id, lr.lesson_id, lr.position, lr.lesson_group, lr.slug, lr.title, lr.status, lr.visibility, COALESCE(ch.nb_chips, 0) AS nb_chips, COALESCE(rl.nb_rules, 0) AS nb_rules, COALESCE(ex.nb_examples, 0) AS nb_examples, COALESCE(la.nb_atoms, 0) AS nb_atoms, COALESCE(la.nb_atoms_core, 0) AS nb_atoms_core, COALESCE(la.nb_atoms_bonus, 0) AS nb_atoms_bonus, COALESCE(la.nb_graphemes, 0) AS nb_graphemes, COALESCE(la.nb_syllables, 0) AS nb_syllables, lr.created_at, lr.updated_at FROM lesson_refs lr LEFT JOIN ( SELECT lesson_ref_id, COUNT(*) AS nb_chips FROM chips GROUP BY lesson_ref_id ) ch ON ch.lesson_ref_id = lr.lesson_ref_id LEFT JOIN ( SELECT lesson_ref_id, COUNT(*) AS nb_examples FROM examples GROUP BY lesson_[...]
+[ Éditer ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0208 seconde(s).)
+-- ========================= -- 2) Vue : chips détaillés -- ========================= CREATE OR REPLACE VIEW v_lesson_chips AS SELECT c.chip_id, c.lesson_ref_id, lr.course_id, lr.lesson_id, ct.code AS chip_type_code, c.title, c.content_md, c.created_at FROM chips c JOIN chip_types ct ON ct.chip_type_id = c.chip_type_id JOIN lesson_refs lr ON lr.lesson_ref_id = c.lesson_ref_id
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0282 seconde(s).)
+-- ========================= -- 3) Vue : rules détaillées -- ========================= CREATE OR REPLACE VIEW v_lesson_rules AS SELECT lrl.lesson_ref_id, lr.course_id, lr.lesson_id, r.rule_id, rt.code AS rule_type_code, r.language_code, r.title, r.statement_md, r.pattern_json, r.notes_md, il.code AS importance_code, il.label_fr AS importance_label_fr, r.created_at FROM lesson_rules lrl JOIN lesson_refs lr ON lr.lesson_ref_id = lrl.lesson_ref_id JOIN rules r ON r.rule_id = lrl.rule_id JOIN rule_types rt ON rt.rule_type_id = r.rule_type_id JOIN importance_levels il ON il.importance_id = lrl.importance_id
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0169 seconde(s).)
+-- ========================= -- 4) Vue : examples -- ========================= CREATE OR REPLACE VIEW v_lesson_examples AS SELECT e.example_id, e.lesson_ref_id, lr.course_id, lr.lesson_id, e.kg_text, e.fr_text, e.en_text, e.notes_md, e.created_at FROM examples e JOIN lesson_refs lr ON lr.lesson_ref_id = e.lesson_ref_id
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0267 seconde(s).)
+-- ========================= -- 5) Vue : lesson_atoms enrichie (types + subtypes + glosses) -- ========================= CREATE OR REPLACE VIEW v_lesson_atoms AS SELECT la.lesson_ref_id, lr.course_id, lr.lesson_id, la.atom_id, lar.code AS lesson_role_code, lar.label_fr AS lesson_role_label_fr, t.code AS atom_type_code, t.label_fr AS atom_type_label_fr, st.code AS atom_subtype_code, st.label_fr AS atom_subtype_label_fr, a.language_code, a.form, a.form_raw, a.normalized_form, a.gloss_fr, a.gloss_en, ag.glosses AS glosses_all, la.evidence_md, la.created_at FROM lesson_atoms la JOIN lesson_refs lr ON lr.lesson_ref_id = la.lesson_ref_id JOIN atoms a ON a.atom_id = la.atom_id JOIN atom_types t ON t.atom_type_id = a.atom_type_id LEFT JOIN atom_subtypes st ON st.atom_subtype_id = a.atom_subtype_id JOIN lesson_atom_roles lar ON lar.lesson_atom_role_id = la.lesson_atom_role_id LEFT JOIN ( SELECT atom_id, GROUP_CONCA[...]
+[ Éditer ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0326 seconde(s).)
+-- ========================= -- 6) Vue : décomposition en graphèmes (orthographe default) -- ========================= CREATE OR REPLACE VIEW v_atom_decomp_default AS SELECT a.atom_id, a.language_code, t.code AS atom_type_code, a.normalized_form, o.orthography_id, o.name AS orthography_name, COUNT(*) AS nb_graphemes, GROUP_CONCAT(g.grapheme ORDER BY ags.seq SEPARATOR '') AS grapheme_join, GROUP_CONCAT(g.grapheme ORDER BY ags.seq SEPARATOR ' ') AS grapheme_spaced FROM atom_grapheme_seq ags JOIN orthographies o ON o.orthography_id = ags.orthography_id AND o.is_default = 1 JOIN graphemes g ON g.grapheme_id = ags.grapheme_id JOIN atoms a ON a.atom_id = ags.atom_id JOIN atom_types t ON t.atom_type_id = a.atom_type_id GROUP BY a.atom_id, a.language_code, t.code, a.normalized_form, o.orthography_id, o.name
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0271 seconde(s).)
+-- ========================= -- 7) Vue : relations d’atomes lisibles -- ========================= CREATE OR REPLACE VIEW v_atom_relations AS SELECT ar.from_atom_id, af.normalized_form AS from_form, tf.code AS from_type, ar.to_atom_id, at2.normalized_form AS to_form, tt.code AS to_type, rt.code AS relation_code, rt.label_fr AS relation_label_fr, ar.notes_md, ar.created_at FROM atom_relations ar JOIN relation_types rt ON rt.relation_type_id = ar.relation_type_id JOIN atoms af ON af.atom_id = ar.from_atom_id JOIN atom_types tf ON tf.atom_type_id = af.atom_type_id JOIN atoms at2 ON at2.atom_id = ar.to_atom_id JOIN atom_types tt ON tt.atom_type_id = at2.atom_type_id
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0181 seconde(s).)
+-- ========================= -- 8) Vue : sources par atom -- ========================= CREATE OR REPLACE VIEW v_atom_sources AS SELECT asrc.atom_id, a.normalized_form AS atom_form, t.code AS atom_type, s.source_id, s.code AS source_code, s.title AS source_title, asrc.ref, asrc.quote_md, asrc.comment_md, asrc.created_at FROM atom_sources asrc JOIN atoms a ON a.atom_id = asrc.atom_id JOIN atom_types t ON t.atom_type_id = a.atom_type_id JOIN sources s ON s.source_id = asrc.source_id
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+Ouvrir une nouvelle fenêtre phpMyAdmin
+
+
+////
+
+Afficher la zone SQL
+ La sélection courante ne contient pas de colonne unique. Les grilles d'édition, les liens Éditer, Copier et Supprimer peuvent provoquer un résultat indésirable. Documentation
+ Affichage des lignes 0 - 0 (total de 1, traitement en 0.0029 seconde(s).)
+SELECT * FROM v_lessons_overview
+Profilage [Éditer en ligne] [ Éditer ] [ Expliquer SQL ] [ Créer le code source PHP ] [ Actualiser]
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
++ Options
+Textes complets	
+lesson_ref_id
+platform_id
+course_id
+lesson_id
+position
+lesson_group
+slug
+title
+status
+visibility
+nb_chips
+nb_rules
+nb_examples
+nb_atoms
+nb_atoms_core
+nb_atoms_bonus
+nb_graphemes
+nb_syllables
+created_at
+updated_at
+
+Éditer Éditer
+Copier Copier
+Supprimer Supprimer
+1
+1
+3
+9
+1
+La syntaxe
+lalphabet-du-kikongo-et-la-structure-des-mots-et-d...
+L'alphabet du kikongo et la structure des mots et ...
+published
+public
+14
+9
+10
+46
+20
+26
+20
+26
+2025-12-20 02:54:19
+2025-12-20 02:54:19
+Avec la sélection : Tout cocher Avec la sélection : Éditer Éditer Copier Copier Supprimer Supprimer Exporter Exporter
+
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
+Opérations sur les résultats de la requête
+Imprimer ImprimerCopier dans le presse-papiers Copier dans le presse-papiersExporter Exporter Afficher le graphique Afficher le graphique Créer une vue Créer une vue
+
+Conserver cette requête SQL dans les signets Conserver cette requête SQL dans les signets
+Intitulé : 
+
+ La sélection courante ne contient pas de colonne unique. Les grilles d'édition, les cases à cocher ainsi que les liens Éditer, Copier et Supprimer ne sont pas disponibles. Documentation
+ Affichage des lignes 0 - 13 (total de 14, traitement en 0.0024 seconde(s).) [chip_id: 9... - 32...]
+SELECT chip_id, chip_type_code, title FROM v_lesson_chips WHERE lesson_ref_id = 1 ORDER BY chip_id
+Profilage [Éditer en ligne] [ Éditer ] [ Expliquer SQL ] [ Créer le code source PHP ] [ Actualiser]
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
++ Options
+chip_id Croissant 1
+chip_type_code
+title
+9
+objectif
+Objectif
+10
+regle
+Voyelles : groupes
+11
+regle
+Épellation (ta / ata)
+12
+note
+Prononciation (rappels)
+13
+a_retenir
+Inventaire (cours)
+14
+regle
+Tons : diacritiques
+15
+regle
+Alternative sans diacritiques (validée)
+16
+a_retenir
+Norme Factory
+24
+regle
+Diphthongues : écrire ce qu’on prononce
+25
+regle
+Transformations euphoniques (nasales & apostrophe)
+26
+note
+Pièges fréquents
+27
+a_retenir
+Check-list lecture correcte
+31
+regle
+Syllabes ouvertes
+32
+a_retenir
+Check-list lecture (30s)
+
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
+Opérations sur les résultats de la requête
+Imprimer ImprimerCopier dans le presse-papiers Copier dans le presse-papiersExporter Exporter Afficher le graphique Afficher le graphique Créer une vue Créer une vue
+
+Conserver cette requête SQL dans les signets Conserver cette requête SQL dans les signets
+Intitulé : 
+
+ La sélection courante ne contient pas de colonne unique. Les grilles d'édition, les cases à cocher ainsi que les liens Éditer, Copier et Supprimer ne sont pas disponibles. Documentation
+ Affichage des lignes 0 - 24 (total de 46, traitement en 0.0041 seconde(s).) [atom_type_code: GRAPHEME... - SYLLABLE...] [normalized_form: A... - DU...]
+SELECT atom_id, lesson_role_code, atom_type_code, atom_subtype_code, normalized_form FROM v_lesson_atoms WHERE lesson_ref_id = 1 ORDER BY atom_type_code, normalized_form
+Profilage [Éditer en ligne] [ Éditer ] [ Expliquer SQL ] [ Créer le code source PHP ] [ Actualiser]
+
+1
+|	 Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
++ Options
+atom_id
+lesson_role_code
+atom_type_code Croissant 1
+atom_subtype_code
+normalized_form Croissant 2
+atom_id
+lesson_role_code
+atom_type_code Croissant 1
+atom_subtype_code
+normalized_form Croissant 2
+3
+core
+grapheme
+vowel
+a
+8
+core
+grapheme
+consonant
+b
+9
+core
+grapheme
+consonant
+d
+4
+core
+grapheme
+vowel
+e
+10
+core
+grapheme
+consonant
+f
+11
+core
+grapheme
+consonant
+g
+1
+core
+grapheme
+vowel
+i
+12
+core
+grapheme
+consonant
+k
+13
+core
+grapheme
+consonant
+l
+14
+core
+grapheme
+consonant
+m
+15
+core
+grapheme
+consonant
+n
+5
+core
+grapheme
+vowel
+o
+16
+core
+grapheme
+consonant
+p
+17
+core
+grapheme
+consonant
+s
+18
+core
+grapheme
+consonant
+t
+2
+core
+grapheme
+vowel
+u
+19
+core
+grapheme
+consonant
+v
+6
+core
+grapheme
+semi_vowel
+w
+7
+core
+grapheme
+semi_vowel
+y
+20
+core
+grapheme
+consonant
+z
+36
+bonus
+syllable
+cv
+da
+52
+bonus
+syllable
+cv
+de
+53
+bonus
+syllable
+cv
+di
+54
+bonus
+syllable
+cv
+do
+55
+bonus
+syllable
+cv
+du
+
+
+1
+|	 Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
+Opérations sur les résultats de la requête
+Imprimer ImprimerCopier dans le presse-papiers Copier dans le presse-papiersExporter Exporter Afficher le graphique Afficher le graphique Créer une vue Créer une vue
+
+Conserver cette requête SQL dans les signets Conserver cette requête SQL dans les signets    ///
+Parfait — on a bien avancé et ta DB “factory” est maintenant opérationnelle. Voilà un bilan complet (copiable dans ton journal), puis la décision d’archi “Java au centre” (avec ou sans Nuxt).
+
+Bilan complet — 6i695q_factory_db (état après Leçon 9)
+1) Objectif atteint
+
+On a réussi à transformer la leçon 9 en contenu structuré, et à démarrer un graphe d’atomes (graphèmes + syllabes-racines) relié à la leçon, prêt pour :
+
+dashboard “lessons”
+
+génération d’exercices plus tard (à partir des règles + atomes + progression)
+
+2) Leçon 9 : référencée proprement
+
+Dans lesson_refs :
+
+lesson_ref_id = 1
+
+platform_id = 1
+
+course_id = 3
+
+lesson_id = 9
+
+slug = lalphabet-du-kikongo-et-la-structure-des-mots-et-des-sons
+
+status = published, visibility = public
+
+3) Contenu pédagogique stocké (Leçon 9)
+
+Chips
+
+chips : 14 chips (types : objectif, règle, note, à retenir)
+
+via v_lesson_chips, on voit bien la liste (Objectif, Voyelles, Épellation, Tons, Norme Factory, Diphthongues, Pièges, Check-lists, etc.)
+
+Règles
+
+rules : 9 règles au total
+
+lesson_rules (leçon 9) : 9 liens
+
+rule_types présents : orthography, prosody, pedagogy
+
+Exemples
+
+examples : 10 exemples (dont ceux des tons + “mua” norme)
+
+✅ Important : tu as clarifié la ligne directrice :
+
+on stocke des exemples traduits si utile (fr/en/pt)
+
+mais on ne “recopie” pas le lexique complet (déjà dans Lexikongo)
+
+4) Atomes : graphèmes + syllabes-racines (Leçon 9)
+
+Vue overview
+v_lessons_overview (leçon_ref_id=1) donne :
+
+nb_chips = 14
+
+nb_rules = 9
+
+nb_examples = 10
+
+nb_atoms = 46
+
+nb_atoms_core = 20
+
+nb_atoms_bonus = 26
+
+nb_graphemes = 20
+
+nb_syllables = 26
+
+Détail :
+
+20 graphèmes (core) : voyelles + consonnes + semi-voyelles (alphabet de la leçon 9)
+
+26 syllabes (bonus) : racines CV et CCV (ka/ki/… + séries pa…, de…, nda…, mpe…, etc.)
+
+5) Orthographe & décomposition en graphèmes (clean)
+
+Orthographies
+
+orthographies : “Kikongo classique” existe, is_default=1, orthography_id=1
+
+Graphemes
+
+graphemes : 20 lignes
+
+Mapping atom → graphème
+
+atom_grapheme_seq : 84 lignes
+
+Et c’est cohérent mathématiquement :
+
+20 graphèmes * 1 = 20
+
+14 syllabes CV * 2 = 28
+
+12 syllabes CCV * 3 = 36
+Total = 20 + 28 + 36 = 84 ✅
+
+Ton test de contrôle (0 ligne retournée si nb_seq incorrect) confirme que tout est aligné.
+
+6) Bibliographie / sources / théories (déjà en place)
+
+Tu as maintenant une base “scientifique” exploitable :
+
+source_kinds : kind book OK
+
+sources : source sungu_banzuzi_roots enregistrée (champ authors, pas author)
+
+atom_sources : 26 liens syllabe→source (Sungu Banzuzi)
+
+Et côté conceptualisation :
+
+theories existe (pour “Banzuzi roots”, “Nsaudi letters”, etc.)
+
+tags + atom_tags existent et servent à tagger :
+
+“etym_root”, “source_sungu_banzuzi”
+
+“theory_sungu_banzuzi”, “theory_nsaudi_letters”
+
+tu as vérifié que ça touche bien :
+
+26 syllabes
+
+20 graphèmes
+
+7) Relations entre atomes (prêt pour “composed_of”, “derived_from”, etc.)
+
+relation_types : 11 types déjà prêts (variant_of, composed_of, derived_from, has_etym_root, …)
+
+atom_relations : 5 relations actuellement
+
+Et tu as posé une règle de modélisation importante :
+
+on n’invente pas des découpages qui violent la structure (ex : “nzo = n + zo” non dans cette logique)
+
+mpimpa est la forme écrite, et [mpiimpa] = prononciation / allongement (donc à représenter via règle + exemple + éventuellement variante, pas en cassant la syllabe)
+
+Leçon 9 : “finir proprement” (ce qu’il reste, très simple)
+
+Vérifier que les content_md des 14 chips sont complets (pas tronqués).
+
+Pour “allongement / tons” : on garde ton choix :
+
+règle + exemples (et la norme “double voyelle” validée : kôka → kooka)
+
+pas besoin d’une table “pronunciations” maintenant (tu as déjà phonétique dans Lexikongo)
+
+Décision d’architecture : oui, “Java au centre” (et Nuxt devient optionnel)
+
+Tu as raison : vu que vous visez web + mobile + livres + packs InDesign + jeux, le plus solide c’est :
+
+A) Java = le “moteur” et la “colonne vertébrale”
+
+Tu as déjà un bon point de départ avec ton backend-java.zip :
+
+il sait déjà générer des puzzles (wordsearch/crossword)
+
+il sait exporter du JSON
+
+il se connecte à Lexikongo/Lexilingala
+
+👉 On étend ça pour qu’il sache aussi lire/servir la factory DB (lessons/chips/rules/atoms).
+
+B) Nuxt n’est plus “le système”, seulement un client (si tu en veux un)
+
+Option 1 : Dashboard Nuxt léger (lecture/édition), rapide à construire
+
+Option 2 : Dashboard Java (Vaadin / Spring MVC / Thymeleaf) si tu veux 100% Java
+
+Option 3 : pas de dashboard au début : juste API + exports JSON (tu bosses via phpMyAdmin + scripts)
+
+C) Architecture recommandée (simple et scalable)
+
+1 repo Java (multi-modules Maven) :
+
+engine : générateurs de puzzles (ce que tu as déjà)
+
+adapters-lexikongo : accès DB lexique
+
+adapters-factory : accès DB factory
+
+api : Spring Boot REST (ou même sans Spring au début, mais Spring aide)
+
+cli : tes outils d’export actuels (conservés)
+
+Endpoints typiques (quand tu voudras)
+
+GET /lessons → list
+
+GET /lessons/{lessonRefId} → overview
+
+GET /lessons/{id}/chips|rules|atoms|examples
+
+POST /generate/wordsearch / POST /generate/crossword (paramètres = langue, thème, tags, niveau, leçon…)
+
+Pourquoi ça colle parfaitement à ton approche “progression”
+
+Parce que la factory DB devient :
+
+la source de vérité pédagogique (chips/rules/atoms + progression)
+
+et le lexique (Lexikongo) reste :
+
+la source de vocabulaire

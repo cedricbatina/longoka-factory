@@ -1,0 +1,1888 @@
+{
+  "meta" : {
+    "course_id" : 3,
+    "atom_index" : {
+      "3" : "a",
+      "8" : "b",
+      "9" : "d",
+      "4" : "e",
+      "10" : "f",
+      "11" : "g",
+      "1" : "i",
+      "12" : "k",
+      "13" : "l",
+      "14" : "m",
+      "15" : "n",
+      "5" : "o",
+      "16" : "p",
+      "17" : "s",
+      "18" : "t",
+      "2" : "u",
+      "19" : "v",
+      "6" : "w",
+      "7" : "y",
+      "20" : "z",
+      "36" : "da",
+      "52" : "de",
+      "53" : "di",
+      "54" : "do",
+      "55" : "du",
+      "32" : "ka",
+      "33" : "ki",
+      "34" : "ko",
+      "35" : "li",
+      "60" : "mpa",
+      "61" : "mpe",
+      "62" : "mpi",
+      "63" : "mpo",
+      "64" : "mpu",
+      "37" : "nda",
+      "56" : "nde",
+      "57" : "ndi",
+      "58" : "ndo",
+      "59" : "ndu",
+      "38" : "ngo",
+      "39" : "ngu",
+      "47" : "pa",
+      "48" : "pe",
+      "49" : "pi",
+      "50" : "po",
+      "51" : "pu"
+    },
+    "orthography_id" : 1,
+    "lesson_id" : 9,
+    "exported_at" : "2025-12-22T13:13:24.637133400+01:00",
+    "db" : "factory"
+  },
+  "lesson" : {
+    "lessonRefId" : 1,
+    "platformId" : 1,
+    "courseId" : 3,
+    "lessonId" : 9,
+    "position" : 1,
+    "lessonGroup" : "La syntaxe",
+    "slug" : "lalphabet-du-kikongo-et-la-structure-des-mots-et-des-sons",
+    "title" : "L'alphabet du kikongo et la structure des mots et des sons",
+    "status" : "published",
+    "visibility" : "public",
+    "createdAt" : "2025-12-20T02:54:19",
+    "updatedAt" : "2025-12-20T02:54:19"
+  },
+  "chips" : [ {
+    "chipId" : 9,
+    "chipTypeCode" : "objectif",
+    "title" : "Objectif",
+    "contentMd" : "Maîtriser l’alphabet du kikongo classique, l’épellation (ta/ata), et les repères de tons."
+  }, {
+    "chipId" : 10,
+    "chipTypeCode" : "regle",
+    "title" : "Voyelles : groupes",
+    "contentMd" : "Premier groupe : **i, u, a**\nDeuxième groupe : **e, o**"
+  }, {
+    "chipId" : 11,
+    "chipTypeCode" : "regle",
+    "title" : "Épellation (ta / ata)",
+    "contentMd" : "Voyelles : ajouter **ta**.\nConsonnes & semi-voyelles : ajouter **ata**."
+  }, {
+    "chipId" : 12,
+    "chipTypeCode" : "note",
+    "title" : "Prononciation (rappels)",
+    "contentMd" : "- **u** = ou (toujours)\n- **e** = é (toujours)\n- pas de e muet"
+  }, {
+    "chipId" : 13,
+    "chipTypeCode" : "a_retenir",
+    "title" : "Inventaire (cours)",
+    "contentMd" : "Voyelles : **i u a e o**\nSemi-voyelles : **w y**\nConsonnes : **b d f g k l m n p s t v z**"
+  }, {
+    "chipId" : 14,
+    "chipTypeCode" : "regle",
+    "title" : "Tons : diacritiques",
+    "contentMd" : "bas : à è ì ò ù\nneutre : ä ë ï ö ü\nhaut : á é í ó ú\nmodulé/allongé : â ê î ô û\nmajeur : non marqué"
+  }, {
+    "chipId" : 15,
+    "chipTypeCode" : "regle",
+    "title" : "Alternative sans diacritiques (validée)",
+    "contentMd" : "Validé : ton modulé/allongé → **double voyelle**.\nEx : **mbâ → mbaa** ; **kôka** → **[kooka]**"
+  }, {
+    "chipId" : 16,
+    "chipTypeCode" : "a_retenir",
+    "title" : "Norme Factory",
+    "contentMd" : "**Pas de i→y / u→w**.\nDonc : **mua** reste **mua** (pas mwa) ; **i + a ≠ ya**."
+  }, {
+    "chipId" : 24,
+    "chipTypeCode" : "regle",
+    "title" : "Diphthongues : écrire ce qu’on prononce",
+    "contentMd" : "Norme : **pas de remplacements systématiques** i→y / u→w.\nEx : **ia ≠ ya**, **ua ≠ wa**.\nOn garde une écriture phonétique simple."
+  }, {
+    "chipId" : 25,
+    "chipTypeCode" : "regle",
+    "title" : "Transformations euphoniques (nasales & apostrophe)",
+    "contentMd" : "Rappels :\n- l + i → di\n- n + b/f/p/v → mb/mf/mp/mv ; n + m → mm\n- Devant b,f,p,m,v : **n’ → m’** (ex **m’b**)\n- **mb ≠ m’b** ; **nt ≠ n’t**"
+  }, {
+    "chipId" : 26,
+    "chipTypeCode" : "note",
+    "title" : "Pièges fréquents",
+    "contentMd" : "- Ne jamais ajouter de **e muet**.\n- **g** se lit toujours [g].\n- Bien distinguer **n- préfixe** vs **n’** (apostrophe).\n- Syllabes ouvertes (pas de consonne finale)."
+  }, {
+    "chipId" : 27,
+    "chipTypeCode" : "a_retenir",
+    "title" : "Check-list lecture correcte",
+    "contentMd" : "1) Découper en syllabes ouvertes.\n2) Repérer l’accent (souvent 1re syllabe du radical).\n3) Appliquer la règle des tons.\n4) u=ou, e=é, g=[g]."
+  }, {
+    "chipId" : 31,
+    "chipTypeCode" : "regle",
+    "title" : "Syllabes ouvertes",
+    "contentMd" : "Règle clé : **aucune syllabe ne finit par une consonne**. On lit en découpant en syllabes ouvertes (CV / CCV...)."
+  }, {
+    "chipId" : 32,
+    "chipTypeCode" : "a_retenir",
+    "title" : "Check-list lecture (30s)",
+    "contentMd" : "- Découper en syllabes ouvertes\n- Trouver l’accent (radical / pénultième emprunts)\n- Appliquer n+consonne → mb/mf/mp/mv/nd/mm\n- Vérifier : u=ou ; e=é ; g=[g]\n- Pas de syllabe fermée"
+  } ],
+  "rules" : [ {
+    "ruleId" : 1,
+    "ruleTypeCode" : "pedagogy",
+    "title" : "L9 — Épellation ta/ata",
+    "statementMd" : "Voyelles → +ta ; consonnes & semi-voyelles → +ata.",
+    "patternJson" : {
+      "vowel_suffix" : "ta",
+      "other_suffix" : "ata"
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 2,
+    "ruleTypeCode" : "prosody",
+    "title" : "L9 — Tons : diacritiques",
+    "statementMd" : "bas: àèìòù ; neutre: äëïöü ; haut: áéíóú ; modulé: âêîôû ; majeur: non marqué.",
+    "patternJson" : {
+      "LOW" : [ "à", "è", "ì", "ò", "ù" ],
+      "NEUTRAL" : [ "ä", "ë", "ï", "ö", "ü" ],
+      "HIGH" : [ "á", "é", "í", "ó", "ú" ],
+      "MODULATED" : [ "â", "ê", "î", "ô", "û" ],
+      "MAJOR" : [ ]
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 3,
+    "ruleTypeCode" : "prosody",
+    "title" : "L9 — Double voyelle (sans diacritiques)",
+    "statementMd" : "Alternative validée : modulé/allongé peut se noter par double voyelle (mbâ → mbaa ; kôka → [kooka]).",
+    "patternJson" : {
+      "double_vowel_allowed" : true,
+      "examples" : [ {
+        "diacritic" : "mbâ",
+        "plain" : "mbaa"
+      }, {
+        "diacritic" : "kôka",
+        "phonetic" : "kooka"
+      } ]
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 4,
+    "ruleTypeCode" : "orthography",
+    "title" : "Factory — pas de i→y / u→w",
+    "statementMd" : "Norme Factory : aucun remplacement i→y ou u→w ; mua reste mua ; i+a ≠ ya.",
+    "patternJson" : {
+      "disable_i_to_y" : true,
+      "disable_u_to_w" : true,
+      "prefer_mua" : true
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 8,
+    "ruleTypeCode" : "phonology",
+    "title" : "L9 — Nasales & apostrophe (rappels)",
+    "statementMd" : "Nasales (lecture/orthographe) : n+b/f/p/v → m(b/f/p/v) ; n+m → mm ; devant b,f,p,m,v : n’→m’. Distinctions : mb ≠ m’b ; nt ≠ n’t.",
+    "patternJson" : {
+      "nasal_assimilation" : true,
+      "apostrophe_shift" : "n_to_m_before_bfpmv",
+      "distinctions" : [ "mb!=m’b", "nt!=n’t" ]
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 9,
+    "ruleTypeCode" : "phonology",
+    "title" : "L9 — Syllabes ouvertes",
+    "statementMd" : "En kikongo, les syllabes sont ouvertes : aucune syllabe ne finit par une consonne.",
+    "patternJson" : {
+      "phonotactics" : {
+        "open_syllables" : true
+      }
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 10,
+    "ruleTypeCode" : "phonology",
+    "title" : "L9 — Emprunts : ouvrir + accent pénultième",
+    "statementMd" : "Dans les emprunts, on ouvre les syllabes (ajout de voyelles) et l’accent est souvent sur la pénultième ; r peut tendre vers l.",
+    "patternJson" : {
+      "borrowings" : {
+        "open_syllables" : true,
+        "stress" : "penultimate",
+        "r_to_l" : true
+      }
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 11,
+    "ruleTypeCode" : "phonology",
+    "title" : "L9 — Assimilation nasale (n + consonne)",
+    "statementMd" : "Règle de lecture : n + consonne peut réaliser des attaques prénasalisées (mb/mf/mp/mv/nd/mm...).",
+    "patternJson" : {
+      "nasal_assimilation" : {
+        "b" : "mb",
+        "f" : "mf",
+        "p" : "mp",
+        "v" : "mv",
+        "d" : "nd",
+        "m" : "mm"
+      }
+    },
+    "notesMd" : "À enrichir au fur et à mesure (nk/ng/nz/ns/nt...).",
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  }, {
+    "ruleId" : 12,
+    "ruleTypeCode" : "phonology",
+    "title" : "L9 — l+i → di",
+    "statementMd" : "Règle de lecture/évolution : l suivi de i peut se réaliser di (selon norme/cas).",
+    "patternJson" : {
+      "li_to_di" : true
+    },
+    "notesMd" : null,
+    "importanceId" : 1,
+    "importanceCode" : "core"
+  } ],
+  "examples" : [ {
+    "exampleId" : 1,
+    "kgText" : "ndùmba",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Ton bas (grave)."
+  }, {
+    "exampleId" : 2,
+    "kgText" : "ndúmba",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Ton haut (aigu)."
+  }, {
+    "exampleId" : 3,
+    "kgText" : "ndûmba",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Ton modulé/allongé (circonflexe)."
+  }, {
+    "exampleId" : 4,
+    "kgText" : "nduumba",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Alternative sans diacritiques : modulé/allongé → double voyelle."
+  }, {
+    "exampleId" : 5,
+    "kgText" : "kôka",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Modulé : prononcé [kooka]."
+  }, {
+    "exampleId" : 6,
+    "kgText" : "koka",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Ton majeur (non marqué)."
+  }, {
+    "exampleId" : 7,
+    "kgText" : "mua",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Norme : on évite w après consonne → mua (pas mwa)."
+  }, {
+    "exampleId" : 8,
+    "kgText" : "kooka",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Orthographe Factory (sans diacritiques) : kôka → kooka (voyelle longue doublée)."
+  }, {
+    "exampleId" : 9,
+    "kgText" : "mpimpa",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Prononciation (tons/allongement) : [mpiimpa]. En Factory, l’allongement se note par double voyelle si besoin, mais la forme canonique ici reste mpimpa."
+  }, {
+    "exampleId" : 10,
+    "kgText" : "Pa-te-lí-ki",
+    "frText" : null,
+    "enText" : null,
+    "notesMd" : "Emprunt “Patrick” : on ouvre les syllabes (ajout voyelles) ; accent pénultième ; r→l possible."
+  } ],
+  "atoms" : [ {
+    "atomId" : 3,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "vowel",
+    "form" : "a",
+    "formRaw" : null,
+    "normalizedForm" : "a",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Voyelle",
+    "graphemeSeq" : [ "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 8,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "b",
+    "formRaw" : null,
+    "normalizedForm" : "b",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "b" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 9,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "d",
+    "formRaw" : null,
+    "normalizedForm" : "d",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "d" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 4,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "vowel",
+    "form" : "e",
+    "formRaw" : null,
+    "normalizedForm" : "e",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Voyelle",
+    "graphemeSeq" : [ "e" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 10,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "f",
+    "formRaw" : null,
+    "normalizedForm" : "f",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "f" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 11,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "g",
+    "formRaw" : null,
+    "normalizedForm" : "g",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "g" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 1,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "vowel",
+    "form" : "i",
+    "formRaw" : null,
+    "normalizedForm" : "i",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Voyelle",
+    "graphemeSeq" : [ "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 12,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "k",
+    "formRaw" : null,
+    "normalizedForm" : "k",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "k" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 13,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "l",
+    "formRaw" : null,
+    "normalizedForm" : "l",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "l" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 14,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "m",
+    "formRaw" : null,
+    "normalizedForm" : "m",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "m" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 15,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "n",
+    "formRaw" : null,
+    "normalizedForm" : "n",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "n" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 5,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "vowel",
+    "form" : "o",
+    "formRaw" : null,
+    "normalizedForm" : "o",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Voyelle",
+    "graphemeSeq" : [ "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 16,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "p",
+    "formRaw" : null,
+    "normalizedForm" : "p",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "p" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 17,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "s",
+    "formRaw" : null,
+    "normalizedForm" : "s",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "s" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 18,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "t",
+    "formRaw" : null,
+    "normalizedForm" : "t",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "t" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 2,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "vowel",
+    "form" : "u",
+    "formRaw" : null,
+    "normalizedForm" : "u",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Voyelle",
+    "graphemeSeq" : [ "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 19,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "v",
+    "formRaw" : null,
+    "normalizedForm" : "v",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "v" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 6,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "semi_vowel",
+    "form" : "w",
+    "formRaw" : null,
+    "normalizedForm" : "w",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Semi-voyelle",
+    "graphemeSeq" : [ "w" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 7,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "semi_vowel",
+    "form" : "y",
+    "formRaw" : null,
+    "normalizedForm" : "y",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Semi-voyelle",
+    "graphemeSeq" : [ "y" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 20,
+    "lessonRoleCode" : "core",
+    "atomTypeCode" : "grapheme",
+    "atomSubtypeCode" : "consonant",
+    "form" : "z",
+    "formRaw" : null,
+    "normalizedForm" : "z",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Alphabet (leçon 9) — Consonne",
+    "graphemeSeq" : [ "z" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "theory_nsaudi_letters",
+      "labelFr" : "Théorie: lettres/sons racines (Nsaudi Kimbazi)",
+      "descriptionMd" : "Graphèmes/sons porteurs de valeurs conceptuelles (à sourcer/valider)."
+    } ],
+    "sources" : [ ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 36,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "da",
+    "formRaw" : null,
+    "normalizedForm" : "da",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "d", "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 52,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "de",
+    "formRaw" : null,
+    "normalizedForm" : "de",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "d", "e" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 53,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "di",
+    "formRaw" : null,
+    "normalizedForm" : "di",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "d", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 54,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "do",
+    "formRaw" : null,
+    "normalizedForm" : "do",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "d", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 55,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "du",
+    "formRaw" : null,
+    "normalizedForm" : "du",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "d", "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 32,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "ka",
+    "formRaw" : null,
+    "normalizedForm" : "ka",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "k", "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 33,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "ki",
+    "formRaw" : null,
+    "normalizedForm" : "ki",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "k", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 34,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "ko",
+    "formRaw" : null,
+    "normalizedForm" : "ko",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "k", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 35,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "li",
+    "formRaw" : null,
+    "normalizedForm" : "li",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "l", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 60,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "mpa",
+    "formRaw" : null,
+    "normalizedForm" : "mpa",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "m", "p", "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 61,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "mpe",
+    "formRaw" : null,
+    "normalizedForm" : "mpe",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "m", "p", "e" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 62,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "mpi",
+    "formRaw" : null,
+    "normalizedForm" : "mpi",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "m", "p", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ {
+      "languageCode" : "fr",
+      "gloss" : "Procédé/état d’absence d’émission (m+pi)",
+      "notesMd" : "Nasale + racine."
+    } ]
+  }, {
+    "atomId" : 63,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "mpo",
+    "formRaw" : null,
+    "normalizedForm" : "mpo",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "m", "p", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 64,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "mpu",
+    "formRaw" : null,
+    "normalizedForm" : "mpu",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "m", "p", "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 37,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "nda",
+    "formRaw" : null,
+    "normalizedForm" : "nda",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "n", "d", "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 56,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "nde",
+    "formRaw" : null,
+    "normalizedForm" : "nde",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "n", "d", "e" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 57,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "ndi",
+    "formRaw" : null,
+    "normalizedForm" : "ndi",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "n", "d", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 58,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "ndo",
+    "formRaw" : null,
+    "normalizedForm" : "ndo",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "n", "d", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 59,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "ndu",
+    "formRaw" : null,
+    "normalizedForm" : "ndu",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "n", "d", "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 38,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "ngo",
+    "formRaw" : null,
+    "normalizedForm" : "ngo",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "n", "g", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 39,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "ccv",
+    "form" : "ngu",
+    "formRaw" : null,
+    "normalizedForm" : "ngu",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (seed factory, leçon 9).",
+    "graphemeSeq" : [ "n", "g", "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 47,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "pa",
+    "formRaw" : null,
+    "normalizedForm" : "pa",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "p", "a" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 48,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "pe",
+    "formRaw" : null,
+    "normalizedForm" : "pe",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "p", "e" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 49,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "pi",
+    "formRaw" : null,
+    "normalizedForm" : "pi",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "p", "i" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ {
+      "languageCode" : "en",
+      "gloss" : "No interaction / no signal emission",
+      "notesMd" : null
+    }, {
+      "languageCode" : "fr",
+      "gloss" : "Absence d’interaction / absence d’émission",
+      "notesMd" : "Glose conceptuelle (racine)."
+    }, {
+      "languageCode" : "pt",
+      "gloss" : "Ausência de interação / ausência de emissão",
+      "notesMd" : null
+    } ]
+  }, {
+    "atomId" : 50,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "po",
+    "formRaw" : null,
+    "normalizedForm" : "po",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "p", "o" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  }, {
+    "atomId" : 51,
+    "lessonRoleCode" : "bonus",
+    "atomTypeCode" : "syllable",
+    "atomSubtypeCode" : "cv",
+    "form" : "pu",
+    "formRaw" : null,
+    "normalizedForm" : "pu",
+    "glossFr" : null,
+    "glossEn" : null,
+    "notesMd" : "Syllabe-racine (extension P/D/ND/MP — seed factory).",
+    "graphemeSeq" : [ "p", "u" ],
+    "tags" : [ {
+      "scope" : "atom",
+      "code" : "etym_root",
+      "labelFr" : "Racine étymologique",
+      "descriptionMd" : "Atom utilisé comme racine/clé étymologique."
+    }, {
+      "scope" : "atom",
+      "code" : "source_sungu_banzuzi",
+      "labelFr" : "Source : Sungu Banzuzi",
+      "descriptionMd" : "Définition/attestation issue du livre Racines étymologiques du groupe linguistique Koongo"
+    }, {
+      "scope" : "atom",
+      "code" : "theory_sungu_banzuzi",
+      "labelFr" : "Théorie: racines étymologiques (Sungu Banzuzi)",
+      "descriptionMd" : "Syllabes-racines: glose conceptuelle + source Sungu."
+    } ],
+    "sources" : [ {
+      "sourceId" : 1,
+      "sourceCode" : "sungu_banzuzi_roots",
+      "title" : "Racines étymologiques du groupe linguistique koongo",
+      "authors" : "Sungu Banzuzi",
+      "year" : null,
+      "publisher" : null,
+      "isbn" : null,
+      "url" : null,
+      "languageCode" : "fr",
+      "ref" : null,
+      "quoteMd" : null,
+      "commentMd" : "Racine conceptuelle (à détailler). Source: Sungu Banzuzi."
+    } ],
+    "glosses" : [ ]
+  } ],
+  "relations" : [ {
+    "fromAtomId" : 62,
+    "toAtomId" : 49,
+    "relationTypeCode" : "derived_from",
+    "notesMd" : "m + pi : nasalisation / procédé (lecture Sungu)."
+  }, {
+    "fromAtomId" : 89,
+    "toAtomId" : 60,
+    "relationTypeCode" : "composed_of",
+    "notesMd" : "analyse: mpimpa = mpi + mpa"
+  }, {
+    "fromAtomId" : 89,
+    "toAtomId" : 62,
+    "relationTypeCode" : "composed_of",
+    "notesMd" : "analyse: mpimpa = mpi + mpa"
+  }, {
+    "fromAtomId" : 82,
+    "toAtomId" : 49,
+    "relationTypeCode" : "has_etym_root",
+    "notesMd" : "Racine conceptuelle: pi (lecture Sungu)."
+  } ]
+}

@@ -1,0 +1,27 @@
+{
+  "meta": {
+    "course_id": 3,
+    "lesson_id": 21,
+    "db": "factory",
+    "exported_at": "2026-02-14T00:00:00Z"
+  },
+  "lesson": {
+    "lessonRefId": 21,
+    "platformId": 1,
+    "courseId": 3,
+    "lessonId": 21,
+    "position": 14,
+    "lessonGroup": "Les affixes",
+    "slug": "les-prefixes-nominaux-demonstratifs-de-la-classe-mu-ba",
+    "title": "Les préfixes nominaux démonstratifs de la classe Mu - Ba",
+    "status": "published",
+    "visibility": "restricted",
+    "createdAt": "2024-11-10T14:51:33",
+    "updatedAt": "2026-02-09T18:14:41",
+    "thumbnailUrl": "https://i.postimg.cc/j23d0GY4/image-kikongo-course.webp"
+  },
+  "chips": [],
+  "lesson_rules": [],
+  "examples": [],
+  "lesson_atoms": []
+}

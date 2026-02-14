@@ -1,0 +1,143 @@
+🗓️ Bilan — Factory DB (6i695q_factory_db) + Leçon 9 (Kikongo) — 21/12/2025
+
+Contexte & décision d’architecture
+- Objectif : bâtir une “Factory” de contenus pédagogiques (leçons → règles / chips / atomes / exemples / sources) réutilisable pour :
+  web, mobile, livres, jeux (mots mêlés, mots croisés…), scripts InDesign, etc.
+- On évite les ENUM (trop rigides) : tout passe par des tables de référence (types, sous-types, tags, relations…).
+- Les traductions du lexique (kg↔fr↔en etc.) restent dans Lexikongo/Lexilingala. 
+  Dans la Factory, on ne stocke des traductions que si c’est utile pédagogiquement (exemples, gloses d’atomes “racines”, notes de règles).
+
+0) Nettoyage DB “longoka_new_db” (source Longoka)
+- Problème initial : collision de slug (ex. lesson_id 59 et 60 pointaient vers le même lesson_slug_id=120).
+- Résolution : correction des données pour avoir 1 slug par leçon, puis ajout d’une contrainte :
+  ALTER TABLE lessons ADD UNIQUE KEY uq_lessons_lesson_slug_id (lesson_slug_id)
+- Vérifications : plus aucun doublon lesson_slug_id / slug en sortie de requêtes HAVING COUNT(*) > 1.
+
+1) Factory DB — Schéma opérationnel
+Tables “contenu cours” (pivot = lesson_ref)
+- lesson_refs : référence externe (platform_id, course_id, lesson_id) + slug/titre/statut/visibilité.
+- chips + chip_types : micro-blocs éditoriaux (objectif, règle, note, à retenir…).
+- rules + rule_types + lesson_rules : règles réutilisables (prosodie, orthographe, pédagogie…), reliées à une leçon avec un niveau d’importance.
+- examples : exemples (kg_text + fr_text/en_text optionnels + notes_md).
+
+Tables “atomes” (graphemes, syllabes, morphèmes…)
+- atoms + atom_types + atom_subtypes : entités atomiques (grapheme, syllable, stem, morpheme, word, etc.).
+- lesson_atoms + lesson_atom_roles : relie les atomes à une leçon (core / bonus) + evidence.
+- graphemes + grapheme_kinds + orthographies : inventaire de graphèmes par orthographe (kg classique).
+- atom_grapheme_seq : décomposition atom → séquence de graphèmes (orthography_id + seq).
+
+Traçabilité / science / bibliographie
+- sources + source_kinds : bibliographie.
+- atom_sources : relie un atome à une source + ref/quote/comment.
+- tags + atom_tags : tagging extensible (etym_root, source_sungu_banzuzi, theory_*…).
+- theories : option “modèles/théories” (ex. Sungu Banzuzi, Nsaudi…).
+
+Relations
+- relation_types + atom_relations : liens structurants entre atomes (derived_from, composed_of, has_prefix, has_etym_root, variant_of, etc.).
+
+2) Leçon 9 (course_id=3, lesson_id=9) — import terminé
+Référence leçon
+- lesson_ref_id = 1
+- slug : lalphabet-du-kikongo-et-la-structure-des-mots-et-des-sons
+- group : “La syntaxe”, statut=published, visibilité=public
+
+Volumes (contrôlés via vues)
+- v_lessons_overview (lesson_ref_id=1) :
+  - chips : 14
+  - rules : 9
+  - examples : 10
+  - atoms liés : 46 (20 core + 26 bonus)
+  - graphemes : 20
+  - syllables : 26
+
+Chips (14) — thèmes
+- Objectif
+- Voyelles : groupes
+- Épellation (ta/ata)
+- Prononciation (rappels)
+- Inventaire (cours)
+- Tons : diacritiques
+- Alternative sans diacritiques (double voyelle) — validée
+- Norme Factory
+- Diphthongues : écrire ce qu’on prononce
+- Transformations euphoniques (nasales & apostrophe)
+- Pièges fréquents
+- Check-list lecture correcte
+- Syllabes ouvertes
+- Check-list lecture (30s)
+
+Rules (9)
+- Prosodie/tons : diacritiques + règle “double voyelle (sans diacritiques)”
+- Pédagogie : épellation ta/ata
+- Orthographe : norme Factory (pas de i→y / u→w, on écrit ce qu’on prononce)
+- + autres règles liées (nasales, diphthongues, syllabes ouvertes, etc.)
+
+Alphabet (core) — 20 graphèmes
+- Voyelles : i u a e o
+- Semi-voyelles : w y
+- Consonnes : b d f g k l m n p s t v z
+
+Syllabes-racines (bonus) — 26 (CV=14, CCV=12)
+- CV (ex.) : ka ki ko li da de di do du pa pe pi po pu
+- CCV (ex.) : nda nde ndi ndo ndu mpa mpe mpi mpo mpu ngo ngu
+
+Qualité / intégrité
+- orthographies : 1 ligne “Kikongo classique”, is_default=1
+- graphemes : 20
+- atom_grapheme_seq : mapping OK ; check “séquence complète” retourne 0 anomalie.
+- lesson_atoms : 20 graphemes (core) + 26 syllables (bonus)
+
+3) Sources & théories (étymologie / lettres)
+- Source ajoutée :
+  - code = sungu_banzuzi_roots (kind=book)
+- atom_sources :
+  - 26 syllabes liées à cette source (1 lien par syllabe).
+- tags / théories :
+  - Tagging déjà en place pour “theory_sungu_banzuzi” et “theory_nsaudi_letters”
+  - Résultat actuel : 26 syllabes + 20 graphèmes taggés sur ces scopes (utile pour filtrer/afficher par “cadre théorique”).
+
+4) Normes linguistiques retenues (pour éviter les ambiguïtés)
+- Pas d’exception i→y / u→w : on vise une écriture “phonétique” stable.
+- “Double voyelle” validée comme alternative sans diacritiques (ex. kôka → kooka).
+- Syllabe kikongo : ouverte (consonne(s) + voyelle), pas de consonne finale.
+  => Pour les analyses, on privilégie une segmentation en syllabes (CV/CCV) plutôt qu’en “lettres isolées”.
+- Exemple : mpimpa s’écrit mpimpa, mais peut se prononcer [mpiimpa] (règle prosodique/allongement).
+  => À stocker comme rule + example (et éventuellement une prononciation), pas comme “im” syllabe autonome.
+
+5) État global DB (compteurs)
+- lesson_refs : 1
+- chips : 14
+- rules : 9
+- examples : 10
+- atoms : 54
+- atom_relations : 5
+(les vues leçon montrent 46 atomes rattachés à L9 ; le reste = atomes “factory” non attachés / autres essais)
+
+6) Prochaine étape recommandée (avant Leçon 10)
+A) Stabiliser le “dashboard data”
+- Garder les vues existantes :
+  - v_lessons_overview
+  - v_lesson_chips
+  - v_lesson_atoms
+  (+ idéalement v_lesson_rules, v_lesson_examples si pas encore)
+
+B) Ajouter 2 briques pour l’usine “multi-produits”
+1) Export JSON “Lesson Pack” (idempotent)
+- Donne : lesson_ref + chips + rules + examples + atoms (+ graphèmes/syllabes décomposées).
+- Sert de format d’échange pour Nuxt / mobile / InDesign / générateurs.
+
+2) Génération d’exercices (plus tard, mais prévue)
+- On pourra générer une partie des exos depuis :
+  - inventaire de graphèmes/syllabes
+  - règles (tons, ta/ata, nasales…)
+  - progression des leçons (prérequis)
+- Les exos “écrits à la main” restent possibles en complément.
+
+7) Orientation “Java plutôt que Nuxt”
+- On a déjà un projet Java (backend-java) orienté génération de jeux à partir de Lexikongo/Lexilingala.
+- Proposition : ajouter un module/paquet “factory” qui lit 6i695q_factory_db et produit :
+  - export JSON des leçons
+  - endpoints API (optionnel ensuite)
+Ainsi, Nuxt devient juste un client (dashboard), pas la source de vérité.
+
+Fin.

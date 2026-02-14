@@ -1,0 +1,185 @@
+
+Afficher la zone SQL
+ La sélection courante ne contient pas de colonne unique. Les grilles d'édition, les cases à cocher ainsi que les liens Éditer, Copier et Supprimer ne sont pas disponibles. Documentation
+ Affichage des lignes 0 - 0 (total de 1, traitement en 0.0022 seconde(s).)
+-- Factory DB — Pack Leçon 10 (Kikongo) — Classes nominales -- Généré automatiquement (chips + rules + examples) -- Déduire platform_id & course_id depuis la leçon seed (lesson_ref_id=1) SELECT @platform_id := platform_id, @course_id := course_id FROM lesson_refs WHERE lesson_ref_id=1
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
++ Options
+@platform_id := platform_id
+@course_id := course_id
+1
+3
+
+ Tout afficher	|			Nombre de lignes : 
+25
+Filtrer les lignes :
+Chercher dans cette table
+Opérations sur les résultats de la requête
+Imprimer ImprimerCopier dans le presse-papiers Copier dans le presse-papiersExporter Exporter Afficher le graphique Afficher le graphique Créer une vue Créer une vue
+
+Conserver cette requête SQL dans les signets Conserver cette requête SQL dans les signets
+Intitulé : 
+
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0011 seconde(s).)
+SET @lesson_id := 10
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0009 seconde(s).)
+SET @position := 2
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0010 seconde(s).)
+SET @lesson_group := 'kikongo'
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0011 seconde(s).)
+SET @slug := 'kikongo-lecon-10-classes-nominales'
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0015 seconde(s).)
+SET @title := 'Les principales classes nominales du kikongo — leçon 10'
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0010 seconde(s).)
+SET @status := 'draft'
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0010 seconde(s).)
+SET @visibility := 'private'
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 2 (traitement en 0.0106 seconde(s).)
+-- Créer la lesson_ref si absente INSERT INTO lesson_refs (platform_id, course_id, lesson_id, position, lesson_group, slug, title, status, visibility) SELECT @platform_id, @course_id, @lesson_id, @position, @lesson_group, @slug, @title, @status, @visibility WHERE NOT EXISTS ( SELECT 1 FROM lesson_refs WHERE platform_id=@platform_id AND course_id=@course_id AND lesson_id=@lesson_id )
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0037 seconde(s).)
+SET @lr := (SELECT lesson_ref_id FROM lesson_refs WHERE platform_id=@platform_id AND course_id=@course_id AND lesson_id=@lesson_id LIMIT 1)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 0 ligne affectée. (traitement en 0.0026 seconde(s).)
+-- Nettoyage (permet de rejouer le script sans doublons) DELETE FROM lesson_rules WHERE lesson_ref_id=@lr
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 0 ligne affectée. (traitement en 0.0027 seconde(s).)
+DELETE FROM examples WHERE lesson_ref_id=@lr
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 0 ligne affectée. (traitement en 0.0026 seconde(s).)
+DELETE FROM chips WHERE lesson_ref_id=@lr
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 0 ligne affectée. (traitement en 0.0028 seconde(s).)
+DELETE FROM lesson_atoms WHERE lesson_ref_id=@lr
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0025 seconde(s).)
+-- Types par défaut (on recatégorisera plus tard si besoin) SET @ct := (SELECT MIN(chip_type_id) FROM chip_types)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0015 seconde(s).)
+SET @rt := (SELECT MIN(rule_type_id) FROM rule_types)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0017 seconde(s).)
+SET @imp := (SELECT importance_id FROM importance_levels WHERE code='core' LIMIT 1)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 18 lignes insérées.
+Identifiant de la ligne insérée : 50 (traitement en 0.0581 seconde(s).)
+-- Chips INSERT INTO chips (lesson_ref_id, chip_type_id, title, content_md) VALUES (@lr, @ct, 'Objectif & contexte', '👋 Yenge ! 🌍 Objectif de la leçon : comprendre et maîtriser le système des classes nominales du kikongo classique : repérer les préfixes nominaux (singulier/pluriel), appliquer les règles d’ accord nominal, adjectival et verbal, et connaître les usages les plus fréquents. Comme dans de nombreuses langues bantoues, le kikongo classe les substantifs selon leur préfixe nominal . Ces classes structurent la phrase et codent notamment le nombre (singulier/pluriel) ainsi que les accords à l’écrit comme à l’oral. 👉 Lancement : on pose les bases des classes nominales ? Allons-y !'), (@lr, @ct, 'Vous allez apprendre', '- ✅ Définir ce qu’est une classe nominale . - ✅ Identifier les préfixes nominaux au singulier et au pluriel. - ✅ Associer correctement singulier ↔ pluriel pour chaque classe. - ✅ Réaliser les accords dans des phrases simples. - ✅ Reconnaître les [...]
+[ Éditer ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 16 (traitement en 0.0083 seconde(s).)
+-- Rules + linking INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Définition: classe nominale', 'Une **classe nominale** regroupe des substantifs qui partagent un **préfixe nominal** (SG/PL) et qui déclenchent des **accords** dans la phrase (déterminants, adjectifs, parfois verbes).', NULL, 'Le préfixe est morphologique (au début du nom).' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Définition: classe nominale')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 16 (traitement en 0.0087 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Définition: classe nominale' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 17 (traitement en 0.0080 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Singulier ↔ pluriel: principe', 'En kikongo, beaucoup de noms ont un couple **SG ↔ PL** qui se fait principalement par **changement de préfixe** (ex. *mu-* → *ba-*, *di-* → *ma-*, etc.).', NULL, 'Apprendre les couples de classes = gagner en fluidité et en accords.' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Singulier ↔ pluriel: principe')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 17 (traitement en 0.0082 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Singulier ↔ pluriel: principe' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 18 (traitement en 0.0074 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Classe n-zi / n-n: pluralisation', 'Pour la classe **n-zi** (ou **n-n**), le singulier prend souvent **n-** et le pluriel se fait soit en ajoutant **zi-**, soit en gardant **n-** (selon les mots / régions).', NULL, 'Attention à la position du *n* et aux variations régionales.' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Classe n-zi / n-n: pluralisation')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 18 (traitement en 0.0075 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Classe n-zi / n-n: pluralisation' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 19 (traitement en 0.0068 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Assimilation du n', 'Règle d’euphonie fréquente : le **n** se réalise souvent **m** devant une consonne bilabiale/labio‑dentale (b, p, f, m, v).', NULL, 'Ex. typiques : n + b → mb…, n + p → mp…, etc. (utile pour QC/segmentation).' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Assimilation du n')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 19 (traitement en 0.0061 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Assimilation du n' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 20 (traitement en 0.0070 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Classe mu-ba: humains', 'La classe **mu‑ba** contient principalement des substantifs humains/agents. Le pluriel se fait avec **ba‑**.', NULL, 'Certains mots peuvent perdre *mu-* (élision n’ / formes lexicalisées).' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Classe mu-ba: humains')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 20 (traitement en 0.0064 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Classe mu-ba: humains' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 21 (traitement en 0.0099 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Diminutifs et ''baa''', 'Les diminutifs peuvent s’exprimer avec **fi‑/bi‑** ou via des constructions du type **muana X** (sing.) / **ba ana baa X** (pl.).', NULL, '**baa n’est pas un préfixe de classe** : c’est une forme de liaison (ba + a) dans l’expression.' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Diminutifs et ''baa''')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 21 (traitement en 0.0068 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Diminutifs et ''baa''' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 22 (traitement en 0.0071 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Sous-classes de lu-', 'La classe **lu‑tu** admet des sous‑classes importantes dans le cours : **lu‑n** et **lu‑ma** (selon les lexèmes / régions).', NULL, 'À garder en tête pour les tables et futurs jeux.' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Sous-classes de lu-')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 22 (traitement en 0.0063 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Sous-classes de lu-' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 23 (traitement en 0.0079 seconde(s).)
+INSERT INTO rules (rule_type_id, title, statement_md, pattern_json, notes_md) SELECT @rt, 'Modélisation CCVV (voyelles longues)', 'Pour que le QC dérive correctement **CCVV**, une voyelle longue doit être encodée en **double graphème** dans `atom_grapheme_seq` (aa, ee, ii, oo, uu).', NULL, 'Ex. *ndaa* = n d a a → dérivé = **ccvv**.' WHERE NOT EXISTS (SELECT 1 FROM rules WHERE title='Modélisation CCVV (voyelles longues)')
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ Warning: #1364 Field 'language_code' doesn't have a default value
+ 1 ligne insérée.
+Identifiant de la ligne insérée : 23 (traitement en 0.0093 seconde(s).)
+INSERT INTO lesson_rules (lesson_ref_id, rule_id, importance_id) SELECT @lr, r.rule_id, @imp FROM rules r WHERE r.title='Modélisation CCVV (voyelles longues)' AND NOT EXISTS (SELECT 1 FROM lesson_rules lr2 WHERE lr2.lesson_ref_id=@lr AND lr2.rule_id=r.rule_id)
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+ 50 lignes insérées.
+Identifiant de la ligne insérée : 60 (traitement en 0.0270 seconde(s).)
+-- Examples INSERT INTO examples (lesson_ref_id, kg_text, fr_text, en_text, notes_md) VALUES (@lr, 'n za - zi nza', 'univers , cosmos', NULL, NULL), (@lr, 'm pinanza - zi mpinanza', 'planète - s', NULL, NULL), (@lr, 'n zazi - zi nzazi', 'un éclair , tonnerre , les éclairs , lors d''un orage', NULL, NULL), (@lr, 'n goonda - zi ngoonda', 'lune - s , mois , etc.', NULL, NULL), (@lr, 'n taangu - zi ntaangu', 'le temps , heure - s , période - s , moment - s , etc.', NULL, NULL), (@lr, 'm vula - zi mvula', 'pluie - s , saison - s , âge - s , etc.', NULL, NULL), (@lr, 'm bumba', 'le soleil', NULL, NULL), (@lr, 'n go - zi ngo', 'léopard - s', NULL, NULL), (@lr, 'n zawu - zi nzawu', 'éléphant - s', NULL, NULL), (@lr, 'm bua - zi mbua', 'chien - s', NULL, NULL), (@lr, 'm buuma - zi mbuuma', 'chat - s', NULL, NULL), (@lr, 'n sa - zi nsa', 'action - s , action - s de faire', NULL, 'Cette expression est un substantif dérivé du verbe :'), (@lr, 'ku sa', 'faire', NULL, NULL), (@lr, 'n[...]
+[ Éditer ]
+ 50 lignes insérées.
+Identifiant de la ligne insérée : 110 (traitement en 0.0249 seconde(s).)
+INSERT INTO examples (lesson_ref_id, kg_text, fr_text, en_text, notes_md) VALUES (@lr, 'kongo - ma kongo', 'chef - s puissant - s , seigneur - s , femme - s puissante - s , homme - s puissant - s , mort - e depuis peu ou depuis longtemps.', NULL, 'Ce substantif est un titre pour désigner un ou une mu isi kongo mort(e) récemment ou depuis longtemps, et qui de son vivant se serait distingué(e) par ses hautes valeurs morales et spirituelles.'), (@lr, 'vata - ma vata', 'village - s , campagne - s , pays', NULL, NULL), (@lr, 'kutu - ma kutu', 'oreille - s', NULL, NULL), (@lr, 'di mpa - ma mpa', 'pain - s', NULL, NULL), (@lr, 'di buundu - ma buundu', 'organisation - s , assemblée - s', NULL, NULL), (@lr, 'laala - ma laala', 'orange - s', NULL, NULL), (@lr, 'di nkondi - ma nkondi', 'banane - s .', NULL, 'Dans certaines régions, on dit aussi di nkondo - ma nkondo'), (@lr, 'ki mfumu - bi mfumu', 'autorité - s , au sens de responsabilité', NULL, NULL), (@lr, 'ki mbevo - bi mbevo', 'mal[...]
+[ Éditer ]
+ 50 lignes insérées.
+Identifiant de la ligne insérée : 160 (traitement en 0.0272 seconde(s).)
+INSERT INTO examples (lesson_ref_id, kg_text, fr_text, en_text, notes_md) VALUES (@lr, 'ki lumbu ki', 'aujourd''hui', NULL, 'Littéralement, cette expression se traduit par : ce jour-ci On peut omettre le préfixe nominal'), (@lr, 'ki , comme suit : lumbu ki', 'aujourd''hui , etc.', NULL, NULL), (@lr, 'ma zono ou zono', 'hier', NULL, NULL), (@lr, 'ma zuzi ou zuzi', 'avant-hier , toute la période plus tôt qu''hier ma zuzi ou zuzi , désignent en réalité, tout le temps avant-hier et plus tôt.', NULL, NULL), (@lr, 'mbazi', 'demain', NULL, NULL), (@lr, 'lu mingu - tu mingu', 'semaine - s', NULL, NULL), (@lr, 'n talu - zi ntalu', 'prix , nombre - s , valeur - s', NULL, NULL), (@lr, 'n saba - zi nsaba', 'jardin - s', NULL, NULL), (@lr, 'ki koozo - bi koozo', 'salle - s de bains , toilette - s', NULL, NULL), (@lr, 'ki kuuku - bi kuuku', 'cuisine - s , foyer - s', NULL, NULL), (@lr, 'ki mbombo - bi mbombo', 'véranda - s , balcon - s', NULL, NULL), (@lr, 'n zaaza - zi nzaaza', 'bateau[...]
+[ Éditer ]
+ 38 lignes insérées.
+Identifiant de la ligne insérée : 198 (traitement en 0.0174 seconde(s).)
+INSERT INTO examples (lesson_ref_id, kg_text, fr_text, en_text, notes_md) VALUES (@lr, 'mu ana - ba ana', 'enfant - s', NULL, NULL), (@lr, 'ki sielo - bi sielo', 'serviteur - s', NULL, NULL), (@lr, 'mu lele - mi lele', 'habit - s , tissu - s', NULL, NULL), (@lr, 'n gudi - zi ngudi', 'mère - s , radicale - s , important - s , essentielle - s , réel - s , etc.', NULL, NULL), (@lr, 'mu samu - mi samu', 'affaire - s , problème - s , préoccupation - s', NULL, NULL), (@lr, 'mu ana ngulu - ba ana ngulu-ngulu', 'porcelet - s', NULL, NULL), (@lr, 'mu kento - ba kento un manguier', '', NULL, NULL), (@lr, 'mu manga - mi manga un peigne', '', NULL, NULL), (@lr, 'ki sanu - bi sanu un chiot', '', NULL, NULL), (@lr, 'fi mbua - bi mbua-mbua un pain', '', NULL, NULL), (@lr, 'di mpa - ma mpa un voleur', '', NULL, NULL), (@lr, 'mu yibi - mi yibi une banane', '', NULL, NULL), (@lr, 'di nkondi - ma nkondi une maisonnette', '', NULL, NULL), (@lr, 'fi nzo - bi nzo-nzo un œuf', '', NULL, NULL),[...]
+[ Éditer ]
+ MySQL a retourné un résultat vide (c'est à dire aucune ligne). (traitement en 0.0086 seconde(s).)
+-- QC syllabes (CV/CCV/CVV/CCVV) SELECT a.atom_id, a.normalized_form, st.code AS declared_subtype, LOWER(GROUP_CONCAT( CASE WHEN g.grapheme IN ('a','e','i','o','u') THEN 'V' ELSE 'C' END ORDER BY ags.seq SEPARATOR '' )) AS derived_subtype, GROUP_CONCAT(g.grapheme ORDER BY ags.seq SEPARATOR '') AS grapheme_seq FROM atoms a JOIN atom_types t ON t.atom_type_id=a.atom_type_id AND t.code='syllable' LEFT JOIN atom_subtypes st ON st.atom_subtype_id=a.atom_subtype_id JOIN atom_grapheme_seq ags ON ags.atom_id=a.atom_id JOIN graphemes g ON g.grapheme_id=ags.grapheme_id GROUP BY a.atom_id HAVING derived_subtype NOT IN ('cv','ccv','cvv','ccvv') OR declared_subtype IS NULL OR declared_subtype <> derived_subtype
+[Éditer en ligne] [ Éditer ] [ Créer le code source PHP ]
+
+atom_id
+normalized_form
+declared_subtype
+derived_subtype
+grapheme_seq
+
+
+Opérations sur les résultats de la requête
+Créer une vue Créer une vue
+
+Conserver cette requête SQL dans les signets Conserver cette requête SQL dans les signets
+Intitulé : 
+
+Ouvrir une nouvelle fenêtre phpMyAdmin
