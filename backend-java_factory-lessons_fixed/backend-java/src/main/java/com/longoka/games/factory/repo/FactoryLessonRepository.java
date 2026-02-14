@@ -20,7 +20,21 @@ import java.util.stream.Collectors;
 /**
  * Read-only repository for Longoka "factory" DB (lessons/chips/rules/examples/atoms).
  *
- * Keep this code simple & explicit (small datasets), then optimize later (batch queries) if needed.
+ * <p>This repository implements efficient data loading strategies:
+ * <ul>
+ *   <li>Uses generic {@link ResultSetMapper} to reduce boilerplate code</li>
+ *   <li>Implements batch loading to avoid N+1 query problems</li>
+ *   <li>Loads atom metadata (tags, sources, glosses, grapheme sequences) in bulk</li>
+ * </ul>
+ *
+ * <p>Performance: For N atoms, uses 5 queries total instead of 4N+1:
+ * <ol>
+ *   <li>Load lesson atoms</li>
+ *   <li>Batch load grapheme sequences</li>
+ *   <li>Batch load tags</li>
+ *   <li>Batch load glosses</li>
+ *   <li>Batch load sources</li>
+ * </ol>
  */
 public class FactoryLessonRepository {
 
@@ -77,7 +91,14 @@ public class FactoryLessonRepository {
 
   /**
    * Generic helper to execute a query and map results using a ResultSetMapper.
-   * Reduces boilerplate in list methods.
+   * Reduces boilerplate code in list methods by centralizing query execution and result mapping.
+   *
+   * @param <T> the type of objects to return
+   * @param sql the SQL query string with optional placeholders (?)
+   * @param mapper the ResultSetMapper to convert each row to an object of type T
+   * @param params optional query parameters to bind to placeholders
+   * @return a list of mapped objects (empty list if no results)
+   * @throws SQLException if a database access error occurs
    */
   private <T> List<T> queryList(String sql, ResultSetMapper<T> mapper, Object... params) throws SQLException {
     try (PreparedStatement ps = cx.prepareStatement(sql)) {
