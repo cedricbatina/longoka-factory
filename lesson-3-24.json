@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "course_id": 3,
+    "lesson_id": 24,
+    "position": 16,
+    "slug": "les-particules-interrogatives-du-kikongo",
+    "title": "Les particules interrogatives du kikongo",
+    "lesson_group": "Les invariables",
+    "status": "published",
+    "visibility": "restricted",
+    "exported_at": "2026-02-15T00:00:00Z",
+    "db": "factory"
+  },
+  "lesson": {
+    "lessonRefId": 24,
+    "platformId": 1,
+    "courseId": 3,
+    "lessonId": 24,
+    "position": 16,
+    "lessonGroup": "Les invariables",
+    "slug": "les-particules-interrogatives-du-kikongo",
+    "title": "Les particules interrogatives du kikongo",
+    "status": "published",
+    "visibility": "restricted",
+    "createdAt": "2026-02-15T00:00:00Z",
+    "updatedAt": "2026-02-15T00:00:00Z"
+  },
+  "welcome": "<p><span class=\"prefix\">👋 Yenge Ki Eno !</span> <span class=\"notes important2 fw-bold\">🌍 Objectif de la leçon :</span> Apprendre à poser des <strong>questions</strong> en kikongo classique grâce aux particules et expressions interrogatives.</p><p>En <span class=\"important\">kikongo classique</span>, plusieurs mots ou formules permettent d’introduire une interrogation, qu’elle soit directe (<em>qui ? où ? combien ?</em>) ou indirecte (<em>je voudrais savoir si…</em>).</p><hr><p><span class=\"notes important2\">📖 Vous allez apprendre à :</span></p><ul><li>✅ Employer les particules interrogatives <strong>ngana/nga</strong> et <strong>eka/ka</strong>.</li><li>✅ Poser des questions indirectes avec <strong>keti</strong> et <strong>tala</strong>.</li><li>✅ Utiliser les interrogatifs <strong>nani ?</strong> (qui ?), <strong>nki ?</strong> (quoi ?), <strong>kua ?</strong> (combien ?).</li><li>✅ Demander un lieu, une manière ou une raison (<em>où ? comment ? pourquoi ?</em>).</li></ul><hr><p><span class=\"notes important2\">🦁 Pourquoi c’est utile&nbsp;?</span></p><ul><li>🌱 Savoir <strong>qui</strong>, <strong>où</strong>, <strong>quand</strong> et <strong>comment</strong> dans la vie quotidienne.</li><li>🧭 Exprimer un doute, vérifier une information ou demander des explications.</li><li>🤝 Enrichir vos échanges et mieux comprendre vos interlocuteurs en kikongo.</li></ul><p><span class=\"notes important2\">🚀 Lancement :</span> Prêt à poser toutes vos questions en kikongo&nbsp;? Allons-y, la curiosité est la clé du progrès&nbsp;!</p>",
+  "summary": "En kikongo, les questions se forment grâce à des particules et expressions interrogatives. Elles permettent de demander une identité, un lieu, une manière, une raison ou une quantité.<ul><li>🔹 <strong>ngana/nga</strong>, <strong>eka/ka</strong> — particules pour introduire directement une question.</li><li>🔹 <strong>keti</strong>, <strong>tala</strong> — expressions pour les questions indirectes (« je voudrais savoir si… »).</li><li>🔹 <strong>nani ?</strong> — qui ? / quelle personne ?</li><li>🔹 <strong>nki ?</strong> — quoi ? / qu’est-ce que ?</li><li>🔹 <strong>kua ?</strong> — combien ?</li><li>🔹 <strong>ku-eyi</strong>, <strong>mu-eyi</strong>, <strong>va-eyi</strong> — où ? (endroit, intérieur, dessus).</li><li>🔹 <strong>bu-eyi</strong> — comment ?</li><li>🔹 <strong>mu diambu dia nki ?</strong> — pourquoi ?</li></ul><p>👉 Ces outils rendent vos phrases interrogatives naturelles et précises en kikongo classique.</p>",
+  "chapters": [
+    {"title": "Lexique", "content": "<h3>Lexique des particules et expressions interrogatives en kikongo</h3><ul><li><strong>ngana / nga</strong> : particule interrogative directe (début de phrase) — « est-ce que ? »</li><li><strong>eka / ka</strong> : particule interrogative pour les phrases négatives — « est-ce que (négation) ? »</li><li><strong>keti</strong> : introduit une question indirecte — « est-ce que… ? »</li><li><strong>tala</strong> : formule pour demander ou vérifier — « regarde si… », « voyons si… »</li><li><strong>nani ?</strong> : qui ? / quelle personne ?</li><li><strong>nki ?</strong> : quoi ? / qu’est-ce que ?</li><li><strong>kua ?</strong> : combien ?</li><li><strong>ku-eyi</strong> : où ? (endroit, direction)</li><li><strong>mu-eyi</strong> : où ? (intérieur, dans…)</li><li><strong>va-eyi</strong> : où ? (dessus, sur…)</li><li><strong>bu-eyi</strong> : comment ?</li><li><strong>mu diambu dia nki ?</strong> : pourquoi ?</li></ul><p>Ce lexique vous servira de référence rapide pour comprendre et utiliser les principales formes interrogatives du kikongo.</p>"},
+    {"title": "Définition des expressions et particules interrogatives", "content": "<h3>Définition des expressions et particules interrogatives</h3><p>Une <strong>particule interrogative</strong> est un mot ou une expression grammaticale utilisee pour introduire une question. Elle signale que la phrase qui suit est une interrogation, facilitant ainsi la comprehension de la structure interrogative.</p><p>Une <strong>expression interrogative</strong> est un groupe de mots ou une phrase servant a poser une question. Ces expressions sont couramment utilisees pour obtenir des informations, clarifier un point ou solliciter une reponse.</p><p>La maitrise de ces concepts est essentielle pour bien comprendre et pratiquer le kikongo. La pratique reguliere vous aidera a les utiliser naturellement.</p><p>Exemple : <em>ngana muana wuena na aku ?</em> = <span class=\"traduction\">as-tu un enfant ?</span></p>"},
+    {"title": "Introduction de la forme interrogative", "content": "...existing code..."},
+    {"title": "Les préfixes et déterminants interrogatifs", "content": "...existing code..."},
+    {"title": "Les adverbes interrogatives du kikongo", "content": "...existing code..."},
+    {"title": "Résumé des expressions interrogatives", "content": "...existing code..."},
+    {"title": "Fiche mémo technique", "content": "...existing code..."}
+  ],
+  "tags": [
+    {"scope": "grammar", "code": "interrogative"},
+    {"scope": "grammar", "code": "question"},
+    {"scope": "grammar", "code": "kikongo"}
+  ],
+  "chips": [],
+  "lesson_rules": [
+    {"ruleId": 1, "ruleTypeCode": "syntax", "title": "Particules interrogatives principales", "statementMd": "En kikongo, on utilise les particules **ngana/nga** (question directe), **eka/ka** (question négative), **keti** et **tala** (question indirecte) pour introduire une interrogation.", "patternJson": {"ngana": "directe", "eka": "négative", "keti": "indirecte", "tala": "indirecte"}, "importanceCode": "core"},
+    {"ruleId": 2, "ruleTypeCode": "syntax", "title": "Placement des interrogatifs", "statementMd": "La particule ou l’adverbe interrogatif précède généralement le mot ou groupe nominal interrogé : **ngana nani ?** (qui ?), **ku-eyi ?** (où ?), **bu-eyi ?** (comment ?)", "patternJson": {"structure": "interrogatif + mot"}, "importanceCode": "core"}
+  ],
+  "examples": [
+    {"kgText": "ngana muana wuena na aku ?", "frText": "as-tu un enfant ?"},
+    {"kgText": "eka banani bazolele longoka ndinga kikongo ?", "frText": "qui veut étudier le kikongo ?"},
+    {"kgText": "ku-eyi uta kuenda ?", "frText": "où vas-tu ?"},
+    {"kgText": "bu-eyi ?", "frText": "comment ?"},
+    {"kgText": "kua ?", "frText": "combien ?"}
+  ],
+  "lesson_atoms": [
+    {"atomTypeCode": "particule", "form": "ngana", "glossFr": "est-ce que (direct)"},
+    {"atomTypeCode": "particule", "form": "eka", "glossFr": "est-ce que (négatif)"},
+    {"atomTypeCode": "particule", "form": "keti", "glossFr": "est-ce que (indirect)"},
+    {"atomTypeCode": "particule", "form": "tala", "glossFr": "regarde si, voyons si"},
+    {"atomTypeCode": "interrogatif", "form": "nani", "glossFr": "qui"},
+    {"atomTypeCode": "interrogatif", "form": "nki", "glossFr": "quoi"},
+    {"atomTypeCode": "interrogatif", "form": "kua", "glossFr": "combien"},
+    {"atomTypeCode": "interrogatif", "form": "ku-eyi", "glossFr": "où (endroit)"},
+    {"atomTypeCode": "interrogatif", "form": "mu-eyi", "glossFr": "où (intérieur)"},
+    {"atomTypeCode": "interrogatif", "form": "va-eyi", "glossFr": "où (dessus)"},
+    {"atomTypeCode": "interrogatif", "form": "bu-eyi", "glossFr": "comment"},
+    {"atomTypeCode": "interrogatif", "form": "mu diambu dia nki", "glossFr": "pourquoi"}
+  ]
+}

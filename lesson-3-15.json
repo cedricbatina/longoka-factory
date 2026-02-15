@@ -1,0 +1,38 @@
+{
+  "meta": {
+    "course_id": 3,
+    "lesson_id": 15,
+    "position": 7,
+    "slug": "etre-et-etre-deja-avec-les-prefixes-nominaux-relatifs",
+    "title": "Être et Être déjà avec les préfixes nominaux relatifs",
+    "lesson_group": "La conjugaison",
+    "status": "published",
+    "visibility": "restricted",
+    "exported_at": "2026-02-14T00:00:00Z",
+    "db": "factory"
+  },
+  "lesson": {
+    "lessonRefId": 15,
+    "platformId": 1,
+    "courseId": 3,
+    "lessonId": 15,
+    "position": 7,
+    "lessonGroup": "La conjugaison",
+    "slug": "etre-et-etre-deja-avec-les-prefixes-nominaux-relatifs",
+    "title": "Être et Être déjà avec les préfixes nominaux relatifs",
+    "status": "published",
+    "visibility": "restricted",
+    "createdAt": "2024-11-10T13:08:35",
+    "updatedAt": "2026-02-09T18:14:41"
+  },
+  "chips": [],
+  "lesson_rules": [],
+  "examples": [],
+  "lesson_atoms": [],
+  "atom_relations": [],
+  "tags": [
+    {"scope": "grammar", "code": "conjugation"},
+    {"scope": "grammar", "code": "copula"},
+    {"scope": "grammar", "code": "verb-etre"}
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "course_id": 3,
+    "lesson_id": 23,
+    "position": 15,
+    "slug": "les-prepostions-et-adverbes-de-lieu-du-kikongo",
+    "title": "Les prépositions et adverbes de lieu du kikongo",
+    "lesson_group": "La conjugaison",
+    "status": "published",
+    "visibility": "restricted",
+    "exported_at": "2026-02-15T00:00:00Z",
+    "db": "factory"
+  },
+  "lesson": {
+    "lessonRefId": 23,
+    "platformId": 1,
+    "courseId": 3,
+    "lessonId": 23,
+    "position": 15,
+    "lessonGroup": "La conjugaison",
+    "slug": "les-prepostions-et-adverbes-de-lieu-du-kikongo",
+    "title": "Les prépositions et adverbes de lieu du kikongo",
+    "status": "published",
+    "visibility": "restricted",
+    "createdAt": "2026-02-15T00:00:00Z",
+    "updatedAt": "2026-02-15T00:00:00Z"
+  },
+  "welcome": "<p><span class=\"prefix\">👋 Yenge Ki Eno !</span> <span class=\"notes important2 fw-bold\">🌍 Objectif de la leçon :</span> maîtriser les <strong>marqueurs de lieu</strong> en kikongo à partir des radicaux <span class=\"important\">ku</span>, <span class=\"important\">mu</span> et <span class=\"important\">va</span>.</p><p>En <span class=\"important\">kikongo classique</span>, ces radicaux jouent le rôle des prépositions françaises <em>vers/à</em> (<strong>ku</strong>), <em>dans</em> (<strong>mu</strong>) et <em>sur</em> (<strong>va</strong>). Ils se combinent selon le contexte pour préciser la <strong>proximité</strong> (<em>ici</em>), la <strong>distance relative</strong> (<em>là</em>) ou l’<strong>éloignement</strong> (<em>là-bas</em>). Nous verrons aussi l’interrogative <strong>où</strong>.</p><hr><p><span class=\"notes important2\">📖 Vous allez apprendre :</span></p><ul><li>✅ Employer <strong>ku</strong> (vers/à), <strong>mu</strong> (dans), <strong>va</strong> (sur) en contexte.</li><li>✅ Exprimer <strong>ici / là / là-bas</strong> selon le point de vue du locuteur.</li><li>✅ Formuler <strong>à + personne</strong> (parler <em>à</em> quelqu’un) et <strong>chez</strong>.</li><li>✅ Poser la question <strong>où ?</strong> et y répondre naturellement.</li></ul><hr><p><span class=\"notes important2\">🦁 Pourquoi c’est utile ?</span></p><ul><li>🌱 Pour donner une <strong>direction</strong> ou un <strong>lieu</strong> sans ambiguïté.</li><li>🧭 Pour décrire des <strong>positions</strong> et des <strong>déplacements</strong> au quotidien.</li><li>🤝 Pour relier vos phrases à l’<strong>espace</strong> (ici/là/là-bas) avec précision.</li></ul>",
+  "summary": "<p>En kikongo, on utilise trois radicaux locatifs pour exprimer le lieu : <strong>ku</strong> (vers/à), <strong>mu</strong> (dans) et <strong>va</strong> (sur). Ils permettent de dire <em>ici</em>, <em>là</em>, <em>là-bas</em> selon la distance au locuteur, et servent aussi pour <em>chez</em> et <em>à + personne</em>.</p><ul><li>🌱 <strong>ku</strong> : direction, adresse, destination (<em>à/vers</em>), et <em>chez</em>.</li><li>🧭 <strong>mu</strong> : intérieur d’un espace (<em>dans</em>).</li><li>✨ <strong>va</strong> : position au-dessus d’une surface (<em>sur</em>).</li><li>❓ <strong>où</strong> : interrogative pour demander le lieu (<em>où… ?</em>).</li></ul>",
+  "chapters": [
+    {"title": "Lexique", "content": ""},
+    {"title": "Définition des prépositions de lieu du kikongo", "content": "<p>En grammaire, une préposition est un mot qui n’a pas de fonction propre mais qui introduit un autre mot ou groupe de mots qui remplit une fonction de complément.</p><p>Les expressions françaises <span class=\"suffix\">vers</span>, <span class=\"suffix\">où</span>, <span class=\"suffix\">dans</span> et <span class=\"suffix\">sur</span> se traduisent en kikongo par les prépositions de lieu suivantes :</p><ul><li><span class=\"important suffix\">ku</span></li><li><span class=\"important suffix\">mu</span></li><li><span class=\"important suffix\">va</span></li></ul><p>Ces prépositions sont en réalité des radicaux adverbiaux. Elles servent à indiquer la position ou le lieu dans l'espace, c'est-à-dire l'endroit où se déroule l'action décrite par le verbe.</p><ul><li><span class=\"important\">ku</span> est un radical adverbial qui traduit les expressions <span class=\"traduction\">à</span>, <span class=\"traduction\">vers</span>, <span class=\"traduction\">là</span> et celles qui s'y rapportent.</li><li><span class=\"important suffix\">mu</span> est un radical adverbial employé pour indiquer l'intérieur d'un espace délimité. Il traduit les expressions <span class=\"traduction\">dans</span>, <span class=\"traduction\">dedans</span>, et celles qui s'y rapportent.</li><li><span class=\"important\">va</span> est un radical adverbial employé pour indiquer l'espace au-dessus d'une surface donnée. Il traduit les expressions <span class=\"traduction\">sur</span>, <span class=\"traduction\">dessus</span> et celles qui s'y rapportent.</li></ul>"},
+    {"title": "La préposition de lieu à", "content": "<ol><li><h4 class=\"important\">Le complément indirect <span class=\"traduction\">à</span> désignant un lieu</h4><span>Comme dans la phrase :<br><span class=\"traduction\">je vais à la maison</span> se traduit par <span class=\"important\">ku</span></span><br><span><span class=\"important suffix\">ku</span> = <span class=\"traduction\">à</span></span><h4 class=\"notes example\">🌱 Exemples</h4><ul><li><span>si <span class=\"prefix\">i</span>kuenda <span class=\"suffix\">ku</span> Kongo = <span class=\"traduction\">je vais aller au Kongo</span></span></li><li><span><span class=\"particule\">nga</span> <span class=\"prefix\">u</span>kuenda <span class=\"suffix\">ku</span> vata kó? = <span class=\"traduction\">n'iras-tu pas au village?</span></span></li></ul></li><li><h4 class=\"important\">Le complément indirect <span class=\"suffix\">à</span> indiquant une personne</h4><span>Comme dans la phrase :<br><span class=\"traduction\">le professeur parle <span class=\"suffix\">à</span> l'élève</span> se traduit par <span class=\"important\">ku</span> combiné à la particule génitive <span class=\"particule\">a</span>.</span><span><span class=\"important suffix\">kua</span> = <span class=\"traduction\">à</span></span><ul><li><span><span class=\"prefix\">n</span>vovele <span class=\"suffix\">kua</span> ngudi ame = <span class=\"traduction\">je parle à ma mère</span></span></li><li><span>si <span class=\"prefix\">i</span>tambika mbongo <span class=\"suffix\">kua</span> ngudi ame = <span class=\"traduction\">je vais envoyer de l'argent à ma mère</span></span></li></ul></li></ol>"},
+    {"title": "La préposition chez", "content": "<span>L'expression <span class=\"traduction\">chez</span>, pour indiquer une adresse par exemple, se traduit également par <span class=\"important\">kua</span>.</span><span><span class=\"important suffix\">kua</span> = <span class=\"traduction\">chez</span></span><ul><li><span><span class=\"suffix\">kua</span> ngudi andi <span class=\"prefix\">ka</span>ena = <span class=\"traduction\">il est chez sa mère</span></span></li><li><span><span class=\"suffix\">kua</span> nkaka andi <span class=\"prefix\">kä</span>kuenda = <span class=\"traduction\">elle ira chez sa grand-mère</span></span></li></ul><p>Pour exprimer les prépositions françaises <span class=\"suffix\">vers</span>, <span class=\"suffix\">dans</span> et <span class=\"suffix\">sur</span>, on utilise en Kikongo respectivement les radicaux adverbiaux : <span class=\"example suffix\">ku</span>, <span class=\"example suffix\">mu</span> et <span class=\"example suffix\">va</span>. Combinés à certains suffixes, ils peuvent désigner des endroits proches ou éloignés du locuteur, ou des endroits éloignés des interlocuteurs.</p><ul><li><span class=\"important\">ku</span>, <span class=\"important\">mu</span> et <span class=\"important\">va</span> expriment l'idée de <span class=\"traduction\">vers ici</span>. Dans ces cas, ils désignent des endroits proches du locuteur.</li><li><span class=\"important\">ku</span>, <span class=\"important\">mu</span> et <span class=\"important\">va</span> traduisent l'idée de <span class=\"traduction\">là</span>. Dans ces cas, ils désignent des endroits éloignés du locuteur et relativement proches de l'interlocuteur.</li><li><span class=\"important\">ku</span>, <span class=\"important\">mu</span> et <span class=\"important\">va</span> expriment l'idée de <span class=\"traduction\">vers là-bas</span>. Dans ces cas, ils désignent des endroits éloignés des interlocuteurs.</li></ul>"},
+    {"title": "L'expression vers", "content": "<li><h4 class=\"mytitle\">L'expression <span class=\"suffix\">Vers</span></h4><ol><li><h5 class=\"important notes suffix\">vers ici</h5><p>Pour traduire la préposition <span class=\"traduction\">vers</span> dans un contexte indiquant un lieu proche du locuteur, on utilise le préfixe <span class=\"important\">ku</span>.<br>Pour insister, on emploie :<br><span class=\"important\">kuaku</span>, <span class=\"important\">kuuku</span> ou encore <span class=\"important\">kuaku ku</span> = <span class=\"traduction\">ici même</span>, <span class=\"traduction\">ici précisément</span></p><ul><li><span>iza <span class=\"important suffix\">ku</span> = <span class=\"traduction\">viens ici</span></span></li><li><span><span class=\"prefix\">lu</span>iza <span class=\"example suffix\">kuuku</span> = <span class=\"traduction\">venez ici là</span></span></li><li><span><span class=\"prefix\">lu</span>iza <span class=\"example suffix\">kuaku</span> = <span class=\"traduction\">venez ici là</span></span></li><li><span><span class=\"prefix\">lu</span>iza <span class=\"example suffix\">kuaku ku</span> = <span class=\"traduction\">venez ici là même</span></span></li></ul></li><li><h5 class=\"important notes suffix\">vers là</h5><p>Pour exprimer la notion de <span class=\"traduction\">vers</span> indiquant un lieu proche de l'interlocuteur, on ajoute au radical <span class=\"suffix\">ku</span> la terminaison <span class=\"example suffix\">oko</span> ou <span class=\"example suffix\">ako</span>.</p><ul><li><span>mbazi si <span class=\"prefix\">i</span>kuiza <span class=\"example suffix\">ku</span><span class=\"particule\">oko</span> = <span class=\"traduction\">je vais venir là</span></span></li><li><span><span class=\"prefix\">lu</span>toma fiela <span class=\"example suffix\">ku</span><span class=\"particule\">ako</span> = <span class=\"traduction\">fouillez bien vers là</span></span></li></ul></li><li><h5 class=\"important notes suffix\">vers là-bas</h5><p>Pour exprimer la notion de <span class=\"traduction\">là-bas</span>, qui indique un lieu relativement éloigné des deux sujets principaux, on emploie la terminaison <span class=\"particule\">una</span> ou <span class=\"particule\">akune</span> au radical <span class=\"example suffix\">ku</span>.</p><ul><li><span><span class=\"prefix\">lu</span>toma tala <span class=\"example suffix\">ku</span><span class=\"particule\">una</span> = <span class=\"traduction\">regardez bien là-bas</span></span><br><span>On peut aussi placer en début d'expression la particule génitive <span class=\"particule\">e</span>, sans changer le sens :<br><span class=\"prefix\">lu</span>toma tala <span class=\"particule\">e</span><span class=\"example suffix\">ku</span><span class=\"particule\">una</span> = <span class=\"traduction\">regardez bien là-bas</span></span></span></li><li><span><span class=\"suffix\">fi</span>mbua <span class=\"prefix\">fi</span>aku <span class=\"example suffix\">ku</span><span class=\"particule\">akune</span>, muene <span class=\"important3\">fio</span> = <span class=\"traduction\">ton chiot, je l'ai vu là-bas</span></span></li><li><span>kanda <span class=\"prefix\">di</span>eto, <span class=\"important3\">kuawu</span></span></li></ul><p>Pour insister sur le lieu indiqué, on emploie l'expression <span class=\"particule\">e</span><span class=\"example suffix\">ku</span><span class=\"particule\">una</span> ou une de ces variantes, précédée du complément indirect de la classe <span class=\"suffix\">ku - ma</span>.</p><ul><li><span><span class=\"important3\">kuawu</span> <span class=\"particule\">e</span><span class=\"example suffix\">ku</span><span class=\"particule\">kune</span> <span class=\"prefix\">ka</span>ta kuenda = <span class=\"traduction\">il va là-bas</span></span></li><li><span><span class=\"suffix\">ku</span>uma, i <span class=\"important3\">kuawu</span> <span class=\"example suffix\">ku</span><span class=\"particule\">una</span>, <span class=\"prefix\">tu</span>ta kuenda = <span class=\"traduction\">c'est l'endroit où nous allons</span></span></li><li><span><span class=\"important3\">kuawu</span> <span class=\"example suffix\">ku</span><span class=\"particule\">une</span> si <span class=\"prefix\">lu</span> tambika <span class=\"suffix\">mi</span>kanda = <span class=\"traduction\">vous allez envoyer les lettres là-bas précisément</span></span></li></ul></li></ol></li>"},
+    {"title": "L'expression dans", "content": "<p><span class=\"important\">mu</span> indique l'intérieur d'un espace donné. Il peut traduire dans ce contexte la préposition <span class=\"traduction\">dans</span>.</p><h4 class=\"example\">🌱 Exemples</h4><ul><li><span class=\"important\"><span class=\"example suffix\">mu</span> mutu = <span class=\"traduction\">dans la tête</span></span></li><li><span class=\"important\"><span class=\"example suffix\">mu</span> nzo = <span class=\"traduction\">dans la maison</span></span></li></ul><p>À l'instar du radical adverbial <span class=\"example suffix\">ku</span>, il peut désigner différents endroits, selon la position du locuteur.</p>..."},
+    {"title": "La préposition sur", "content": "<p>Pour traduire la préposition de lieu <span class=\"traduction\">sur</span>, on utilise le radical adverbial <span class=\"important\">va</span>.<br><span class=\"important\"><span class=\"suffix\">va</span> <span class=\"suffix\">m'</span>toto</span> = <span class=\"traduction\">sur terre</span></p>..."},
+    {"title": "Récapitulatif des prépositions et adverbes de lieu du kikongo", "content": "<p>Dans cette leçon, nous allons aborder les notions des prépositions : <span class=\"suffix\">vers</span>, <span class=\"suffix\">dans</span> et <span class=\"suffix\">sur</span>, ainsi que l'interrogative locative <span class=\"suffix\">où</span>. Nous avons appris que :</p>..."},
+    {"title": "Fiche récapitulative", "content": "<h4 class=\"mytitle\">Fiche mémo : Prépositions et adverbes de lieu en kikongo</h4>..."},
+    {"title": "Fiche mémo technique", "content": "<p class=\"notes important2\">Mémo technique — prépositions et adverbes de lieu en kikongo : repérer la préposition/adverbe, identifier la structure syntaxique (préposition + nom, adverbe seul, etc.), puis appliquer le schéma d’accord ou de positionnement selon le contexte (statique, directionnel, locatif, etc.).</p>..."}
+  ],
+  "tags": [
+    {"scope": "grammar", "code": "preposition"},
+    {"scope": "grammar", "code": "adverb"},
+    {"scope": "grammar", "code": "locative"}
+  ],
+  "chips": [],
+  "lesson_rules": [
+    {
+      "ruleId": 1,
+      "ruleTypeCode": "syntax",
+      "title": "Prépositions/adverbes de lieu : ku, mu, va",
+      "statementMd": "En kikongo, on utilise les radicaux adverbiaux **ku** (à/vers), **mu** (dans), **va** (sur) pour exprimer la localisation, la direction ou la position.",
+      "patternJson": {"ku": "à/vers", "mu": "dans", "va": "sur"},
+      "importanceCode": "core"
+    },
+    {
+      "ruleId": 2,
+      "ruleTypeCode": "syntax",
+      "title": "Placement syntaxique des prépositions de lieu",
+      "statementMd": "La préposition/adverbe précède généralement le nom ou le groupe nominal : **ku Kongo** (au Kongo), **mu nzo** (dans la maison), **va m’toto** (sur terre).",
+      "patternJson": {"structure": "préposition + nom"},
+      "importanceCode": "core"
+    },
+    {
+      "ruleId": 3,
+      "ruleTypeCode": "interrogative",
+      "title": "Formulation de l’interrogative ‘où’",
+      "statementMd": "Pour demander le lieu, on utilise le radical interrogatif **wapi** ou la structure contextuelle avec **ku/mu/va**.",
+      "patternJson": {"interrogative": "où = wapi / ku/mu/va + ?"},
+      "importanceCode": "core"
+    }
+  ],
+  "examples": [
+    {"kgText": "si ikuenda ku Kongo", "frText": "je vais au Kongo"},
+    {"kgText": "nvovele kua ngudi ame", "frText": "je parle à ma mère"},
+    {"kgText": "iza ku", "frText": "viens ici"},
+    {"kgText": "mu nzo", "frText": "dans la maison"},
+    {"kgText": "va m’toto", "frText": "sur terre"}
+  ],
+  "lesson_atoms": [
+    {"atomTypeCode": "preposition", "form": "ku", "glossFr": "à, vers"},
+    {"atomTypeCode": "preposition", "form": "mu", "glossFr": "dans"},
+    {"atomTypeCode": "preposition", "form": "va", "glossFr": "sur"},
+    {"atomTypeCode": "preposition", "form": "kua", "glossFr": "à, chez (personne)"},
+    {"atomTypeCode": "suffix", "form": "oko", "glossFr": "là (proche interlocuteur)"},
+    {"atomTypeCode": "suffix", "form": "ako", "glossFr": "là (proche interlocuteur)"},
+    {"atomTypeCode": "suffix", "form": "una", "glossFr": "là-bas (éloigné)"},
+    {"atomTypeCode": "suffix", "form": "akune", "glossFr": "là-bas (éloigné)"}
+  ],
+  "atom_relations": []
+}
